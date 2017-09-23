@@ -1,17 +1,22 @@
 {
   "manifest_version": 2,
   "name": "Grid Overlay",
-  "version": "0.1",
-  "description": "description",
+  "version": "0.2",
+  "description": "Show grid over site",
   "browser_action": {
     "default_icon": {
-      "16": "./icons/icon-16.png"
+      "16": "icons/icon-16.png"
     },
-    "default_title": "Grid Overlay",
-    "default_popup": "./popup/popup.html"
+    "default_popup": "popup/popup.html",
+    "default_title": "Show Grid Overlay"
   },
+  "author": "Nikolai Shabalin <dev.nikolai.shabalin@gmail.com>",
+  "content_scripts" : [{
+    "js": ["content/content.js"],
+    "matches" : ["https://*/*"]
+  }],
   "permissions": [
-    "tabs",
-    "activeTab"
+    "activeTab",
+    "tabs"
   ]
 }

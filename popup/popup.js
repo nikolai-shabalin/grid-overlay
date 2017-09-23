@@ -21,5 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }  else if (target === 'max-width') {
             options.maxWidth= value;
         }
-    })
+
+        chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+            chrome.tabs.sendMessage(tabs[0].id, {greeting: "hello"}, function(response) {
+                console.log(response.farewell);
+            });
+        });
+    });
+
+
 });
