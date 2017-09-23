@@ -1,10 +1,18 @@
+function send(data) {
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        chrome.tabs.sendMessage(tabs[0].id, data);
+    });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('popupOpen');
     let form = document.getElementById('form');
+
     let options = {
-        columnNumber: 36,
-        columnWidth: 38,
-        gutterWidth: 0,
-        maxWidth: 1920
+        columnNumber: 12,
+        columnWidth: 60,
+        gutterWidth: 10,
+        maxWidth: 800
     };
 
     form.addEventListener('input', (event) => {
@@ -22,12 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
             options.maxWidth= value;
         }
 
-        chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-            chrome.tabs.sendMessage(tabs[0].id, {greeting: "hello"}, function(response) {
-                console.log(response.farewell);
-            });
-        });
+        send(options)
     });
 
-
+    send(options)
 });
