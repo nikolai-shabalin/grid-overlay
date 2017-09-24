@@ -7,13 +7,26 @@
     </head>
     <body>
         <form action="." id="form">
-            <input type="number" name="column-number" placeholder="Количество колонок">
-            <input type="number" name="column-width" placeholder="Ширина колонки">
-            <input type="number" name="gutter-width" placeholder="Ширина гаттера">
-            <input type="number" name="max-width" placeholder="Максимальная ширина">
+            <label for="columnNumber"><b>Количество колонок</b></label>
+            <input id="columnNumber" type="number" name="column-number" placeholder="Количество колонок" value="12">
 
-            <input type="color" title="цвет колонки">
-            <input type="color" title="цвет гаттера">
+            <label for="columnWidth"><b>Ширина колонки</b></label>
+            <input id="columnWidth" type="number" name="column-width" placeholder="Ширина колонки" value="60">
+
+            <label for="gutterWidth"><b>Ширина гаттера</b></label>
+            <input id="gutterWidth" type="number" name="gutter-width" placeholder="Ширина гаттера" value="10">
+
+            <label for="columnColor"><b>Цвет колонки</b></label>
+            <input id="columnColor" type="color" name="column-color" title="цвет колонки" value="#ff00e9">
+
+            <br>
+            <label for="gutterColor"><b>Цвет гаттера</b></label>
+            <input id="gutterColor" type="color" name="gutter-color" title="цвет гаттера" value="#003fff">
+
+            <label for="opacity"><b>Прозрачность</b></label>
+            <input id="opacity" type="range" name="opacity" min="0" max="1" step="0.1" value="0.1" title="цвет гаттера">
+
+            <input type="reset" value="По умолчанию">
         </form>
         <script src="popup.js"></script>
     </body>

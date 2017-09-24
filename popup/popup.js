@@ -12,7 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
         columnNumber: 12,
         columnWidth: 60,
         gutterWidth: 10,
-        maxWidth: 800
+        columnColor: '#ff00e9',
+        gutterColor: '#003fff',
+        opacity: 0.1
     };
 
     form.addEventListener('input', (event) => {
@@ -24,10 +26,14 @@ document.addEventListener('DOMContentLoaded', () => {
             options.columnNumber = value;
         } else if (target === 'column-width') {
             options.columnWidth = value;
-        }  else if (target === 'gutter-width') {
+        } else if (target === 'gutter-width') {
             options.gutterWidth = value;
-        }  else if (target === 'max-width') {
-            options.maxWidth= value;
+        } else if (target === 'column-color') {
+            options.columnColor = value;
+        } else if (target === 'gutter-color') {
+            options.gutterColor = value;
+        } else if (target === 'opacity') {
+            options.opacity = value;
         }
 
         send(options)
