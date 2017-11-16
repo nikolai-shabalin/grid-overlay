@@ -3,10 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <title>Grid Overlay</title>
-        <link rel="stylesheet" href="popup.css">
+        <link rel="stylesheet" href="./popup.css">
     </head>
     <body>
-        <form action="." id="form">
+
+        <form action="#" id="form">
             <label for="columnNumber"><b>Количество колонок</b></label>
             <input id="columnNumber" type="number" name="column-number" placeholder="Количество колонок" value="12">
 
@@ -17,7 +18,7 @@
             <input id="gutterWidth" type="number" name="gutter-width" placeholder="Ширина гаттера" value="10">
 
             <label for="columnColor"><b>Цвет колонки</b></label>
-            <input id="columnColor" type="color" name="column-color" title="цвет колонки" value="#ff00e9">
+            <input class="jscolor" id="columnColor" type="hidden" name="column-color" title="цвет колонки" value="#ff00e9">
 
             <br>
             <label for="gutterColor"><b>Цвет гаттера</b></label>
@@ -28,6 +29,71 @@
 
             <input type="reset" value="По умолчанию">
         </form>
-        <script src="popup.js"></script>
+
+
+        <script src="./../libs/jscolor.min.js"></script>
+        <script src="./popup.js"></script>
+
+<!--
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            input {
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            .circle {
+                width: 24px;
+                height: 25px;
+                display: block;
+                border-radius: 50%;
+                border: none;
+                cursor: pointer;
+                outline: none;
+                padding: 0;
+            }
+        </style>
+
+        <button
+                id="circle"
+                class="circle"
+                style="background-color: #ff00e9; box-shadow: 0 5px 10px rgba(255, 0, 233, 0.2);">
+
+        </button>
+
+        <input id="foo" class="jscolor  {onFineChange:'update(this)'}" type="text" value="ff00e9">
+
+
+        <script src="jscolor.js"></script>
+        <script>
+            let input = document.getElementById('foo');
+            let div = document.getElementById('circle');
+
+            function hexToRGB(hex, alpha) {
+                var r = parseInt(hex.slice(1, 3), 16),
+                    g = parseInt(hex.slice(3, 5), 16),
+                    b = parseInt(hex.slice(5, 7), 16);
+
+                if (alpha) {
+                    return "rgba(" + r + ", " + g + ", " + b + ", " + alpha + ")";
+                } else {
+                    return "rgb(" + r + ", " + g + ", " + b + ")";
+                }
+            }
+
+            function update(picker) {
+                console.log(picker);
+                div.style.backgroundColor = picker.toHEXString();
+                div.style.boxShadow = `0 5px 10px ${hexToRGB(picker.toHEXString(), 0.2)}`
+            }
+
+            div.addEventListener('click', (event) => {
+                event.preventDefault();
+                input.jscolor.show();
+            });
+        </script>-->
     </body>
 </html>

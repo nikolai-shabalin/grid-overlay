@@ -13,10 +13,9 @@
   "author": "Nikolai Shabalin <dev.nikolai.shabalin@gmail.com>",
   "content_scripts" : [{
     "js": ["content/content.js"],
-    "matches" : ["https://*/*"]
+    "matches" : ["http://*/*", "https://*/*"]
   }],
   "permissions": [
-    "activeTab",
-    "tabs"
+    "activeTab"
   ]
 }

@@ -5,7 +5,6 @@ function send(data) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('popupOpen');
     let form = document.getElementById('form');
 
     let options = {
