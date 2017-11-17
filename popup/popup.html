@@ -7,27 +7,41 @@
     </head>
     <body>
 
-        <form action="#" id="form">
-            <label for="columnNumber"><b>Количество колонок</b></label>
-            <input id="columnNumber" type="number" name="column-number" placeholder="Количество колонок" value="12">
+        <form action="#" id="form" class="form">
+            <div class="form__item">
+                <label for="columnNumber">Количество колонок</label>
+                <input
+                        id="columnNumber"
+                        type="number"
+                        name="column-number"
+                        placeholder="Количество колонок"
+                        value="12"
+                        min="1"
+                        max="36">
 
-            <label for="columnWidth"><b>Ширина колонки</b></label>
-            <input id="columnWidth" type="number" name="column-width" placeholder="Ширина колонки" value="60">
+                <div class="form__number">12</div>
+            </div>
+            <!--<div class="form__number-wrapper">-->
+                <!--<div class="form__number-overlay"></div>-->
+            <!--</div>-->
 
-            <label for="gutterWidth"><b>Ширина гаттера</b></label>
-            <input id="gutterWidth" type="number" name="gutter-width" placeholder="Ширина гаттера" value="10">
+            <!--<label for="columnWidth"><b>Ширина колонки</b></label>-->
+            <!--<input id="columnWidth" type="number" name="column-width" placeholder="Ширина колонки" value="60">-->
 
-            <label for="columnColor"><b>Цвет колонки</b></label>
-            <input class="jscolor" id="columnColor" type="hidden" name="column-color" title="цвет колонки" value="#ff00e9">
+            <!--<label for="gutterWidth"><b>Ширина гаттера</b></label>-->
+            <!--<input id="gutterWidth" type="number" name="gutter-width" placeholder="Ширина гаттера" value="10">-->
 
-            <br>
-            <label for="gutterColor"><b>Цвет гаттера</b></label>
-            <input id="gutterColor" type="color" name="gutter-color" title="цвет гаттера" value="#003fff">
+            <!--<label for="columnColor"><b>Цвет колонки</b></label>-->
+            <!--<input class="jscolor" id="columnColor" type="hidden" name="column-color" title="цвет колонки" value="#ff00e9">-->
 
-            <label for="opacity"><b>Прозрачность</b></label>
-            <input id="opacity" type="range" name="opacity" min="0" max="1" step="0.1" value="0.1" title="цвет гаттера">
+            <!--<br>-->
+            <!--<label for="gutterColor"><b>Цвет гаттера</b></label>-->
+            <!--<input id="gutterColor" type="color" name="gutter-color" title="цвет гаттера" value="#003fff">-->
 
-            <input type="reset" value="По умолчанию">
+            <!--<label for="opacity"><b>Прозрачность</b></label>-->
+            <!--<input id="opacity" type="range" name="opacity" min="0" max="1" step="0.1" value="0.1" title="цвет гаттера">-->
+
+            <!--<input type="reset" value="По умолчанию">-->
         </form>
 
 

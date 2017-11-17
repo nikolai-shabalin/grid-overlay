@@ -1,4 +1,3 @@
-console.log('openPopup');
 let body = document.body;
 let wrapper = document.createElement('div');
 
@@ -60,7 +59,6 @@ function updateColumns() {
 }
 
 chrome.runtime.onMessage.addListener(function(request) {
-    console.log(request);
     createWrapper(request);
     createColumns(request);
     body.appendChild(wrapper);
