@@ -1,19 +1,50 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import InputNumber from './inputs/InputNumber'
+import InputColor from './inputs/InputColor'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+        <div>
+            <label htmlFor="column-number">Количество колонок</label>
+            <InputNumber
+                id="column-number"
+                value="12"
+            />
+
+            <label htmlFor="column-width">Ширина колонки</label>
+            <InputNumber
+                id="column-width"
+                value="60"
+            />
+
+            <label htmlFor="gutter-width">Ширина гаттеров</label>
+            <InputNumber
+                id="gutter-width"
+                value="20"
+            />
+
+            <label htmlFor="column-color">Цвет колонки</label>
+            <InputColor
+                id="column-color"
+                value="#ff00e9"
+            />
+
+            <label htmlFor="gutter-color">Цвет гаттера</label>
+            <InputColor
+                id="gutter-color"
+                value="#663399"
+            />
+
+            <label htmlFor="gutter-width">Прозрачность</label>
+            <InputNumber
+                id="opacity"
+                value="0.3"
+                step="0.1"
+                max="1"
+            />
+        </div>
     );
   }
 }
