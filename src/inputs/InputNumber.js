@@ -12,11 +12,20 @@ class InputNumber extends Component {
         };
 
         this.onChange = this.onChange.bind(this);
+        this.onWheel = this.onWheel.bind(this);
     }
     onChange(event) {
+        this.setValue(event.target.value)
+    }
+
+    onWheel(event) {
+        this.setValue(event.target.value)
+    }
+
+    setValue(value) {
         this.setState({
-            value: event.target.value
-        })
+            value: value
+        });
     }
 
     render() {
@@ -29,6 +38,7 @@ class InputNumber extends Component {
                 min="0"
                 max={this.state.max}
                 onChange={this.onChange}
+                onWheel={this.onWheel}
             />
         )
     }
