@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
-import InputNumber from './inputs/InputNumber';
-import InputColor from './inputs/InputColor';
-import InputCheckbox from './inputs/InputCheckbox';
+import {InputNumber, InputColor, InputCheckbox} from './inputs';
 import Grid from './Grid';
 
 class App extends Component {
