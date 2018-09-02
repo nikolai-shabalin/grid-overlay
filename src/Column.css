@@ -1,0 +1,15 @@
+.column {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 100%;
+    text-align: center;
+}
+
+/*Когда нет гаттеров показываем разделительную полосу*/
+.column.shadow {
+    box-shadow: -1px 0 0 black inset;
+}
+
+.column.shadow:last-child {
+    box-shadow: none;
+}
