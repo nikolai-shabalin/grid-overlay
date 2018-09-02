@@ -1,49 +1,129 @@
 import React, {Component} from 'react';
 import './App.css';
-import InputNumber from './inputs/InputNumber'
-import InputColor from './inputs/InputColor'
+import InputNumber from './inputs/InputNumber';
+import InputColor from './inputs/InputColor';
+import InputCheckbox from './inputs/InputCheckbox';
+import Grid from './Grid';
 
 class App extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            columnNumber: 12,
+            columnWidth: 60,
+            gutterWidth: 20,
+            columnColor: '#ff00e9',
+            gutterColor: '#663399',
+            opacity: 0.3,
+            fluid: false,
+            maxWidth: 0
+        };
+
+        this.onChange = this.onChange.bind(this);
+        this.onWheel = this.onWheel.bind(this);
+    }
+
+    onChange(event) {
+        this.changeState(event);
+    }
+
+    onWheel(event) {
+        this.changeState(event);
+    }
+
+    changeState(event) {
+        if (event.target.type === 'checkbox') {
+            this.setState({
+                [event.target.id]: event.target.checked
+            });
+        } else {
+            this.setState({
+                [event.target.id]: event.target.value
+            });
+        }
+    }
+
     render() {
         return (
             <div>
-                <label htmlFor="column-number">Количество колонок</label>
-                <InputNumber
-                    id="column-number"
-                    value="12"
-                />
+                <div>
+                    <label htmlFor='columNumber'>Количество колонок</label>
+                    <InputNumber
+                        id='columnNumber'
+                        value={this.state.columnNumber}
+                        onChange={this.onChange}
+                        onWheel={this.onWheel}
+                    />
 
-                <label htmlFor="column-width">Ширина колонки</label>
-                <InputNumber
-                    id="column-width"
-                    value="60"
-                />
+                    <label htmlFor='columnWidth'>Ширина колонки</label>
+                    <InputNumber
+                        id='columnWidth'
+                        value={this.state.columnWidth}
+                        onChange={this.onChange}
+                        onWheel={this.onWheel}
+                    />
 
-                <label htmlFor="gutter-width">Ширина гаттеров</label>
-                <InputNumber
-                    id="gutter-width"
-                    value="20"
-                />
+                    <label htmlFor='gutterWidth'>Ширина гаттеров</label>
+                    <InputNumber
+                        id='gutterWidth'
+                        value={this.state.gutterWidth}
+                        step={2}
+                        onChange={this.onChange}
+                        onWheel={this.onWheel}
+                    />
 
-                <label htmlFor="column-color">Цвет колонки</label>
-                <InputColor
-                    id="column-color"
-                    value="#ff00e9"
-                />
+                    <label htmlFor='columnColor'>Цвет колонки</label>
+                    <InputColor
+                        id='columnColor'
+                        value={this.state.columnColor}
+                        onChange={this.onChange}
+                    />
 
-                <label htmlFor="gutter-color">Цвет гаттера</label>
-                <InputColor
-                    id="gutter-color"
-                    value="#663399"
-                />
+                    <label htmlFor='gutterColor'>Цвет гаттера</label>
+                    <InputColor
+                        id='gutterColor'
+                        value={this.state.gutterColor}
+                        onChange={this.onChange}
+                    />
 
-                <label htmlFor="gutter-width">Прозрачность</label>
-                <InputNumber
-                    id="opacity"
-                    value="0.3"
-                    step="0.1"
-                    max="1"
-                />
+                    <label htmlFor='opacity'>Прозрачность</label>
+                    <InputNumber
+                        id='opacity'
+                        value={this.state.opacity}
+                        step={0.1}
+                        max={1}
+                        onChange={this.onChange}
+                        onWheel={this.onWheel}
+                    />
+
+                    <label htmlFor='fluid'>Резиновый</label>
+                    <InputCheckbox
+                        id='fluid'
+                        onChange={this.onChange}
+                    />
+
+                    <label htmlFor='maxWidth'>Макс. ширина</label>
+                    <InputNumber
+                        id='maxWidth'
+                        value={this.state.maxWidth}
+                        step={10}
+                        onChange={this.onChange}
+                        onWheel={this.onWheel}
+                    />
+                </div>
+                <div>
+                    <Grid
+                        maxWidth={this.state.maxWidth}
+                        fluid={this.state.fluid}
+                        columnNumber={this.state.columnNumber}
+                        columnWidth={this.state.columnWidth}
+                        gutterWidth={this.state.gutterWidth}
+                        columnColor={this.state.columnColor}
+                        gutterColor={this.state.gutterColor}
+                        opacity={this.state.opacity}
+                    />
+                </div>
             </div>
         );
     }

@@ -1,0 +1,30 @@
+.grid {
+    display: flex;
+    flex-flow: row nowrap;
+    text-align: center;
+    position: absolute;
+    z-index: 9999;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100vh;
+    top: 50px;
+}
+
+/*Когда нет гаттеров показываем разделительную полосу*/
+.shadow {
+    box-shadow: -1px 0 0 black inset;
+}
+
+.shadow:last-child {
+    box-shadow: none;
+}
+
+/*Резиновый*/
+.fluid {
+    width: 100%;
+}
+
+.fluid .column {
+    flex: 1 0 auto;
+}
+

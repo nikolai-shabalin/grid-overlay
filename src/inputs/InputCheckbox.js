@@ -5,13 +5,8 @@ class InputNumber extends Component {
         return (
             <input
                 id={this.props.id}
-                type="number"
-                value={this.props.value}
-                step={this.props.step}
-                min="0"
-                max={this.props.max}
+                type="checkbox"
                 onChange={this.props.onChange}
-                onWheel={this.props.onWheel}
             />
         )
     }
