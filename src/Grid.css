@@ -6,17 +6,12 @@
     left: 50%;
     transform: translateX(-50%);
     height: 100vh;
-    top: 50px;
+    top: 250px;
 }
-
-
 
 /*Резиновый*/
 .fluid {
     width: 100%;
 }
 
-.fluid .column {
-    flex: 1 0 auto;
-}
 

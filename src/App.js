@@ -45,70 +45,88 @@ class App extends Component {
     render() {
         return (
             <div>
-                <div>
-                    <label htmlFor='columNumber'>Количество колонок</label>
-                    <InputNumber
-                        id='columnNumber'
-                        value={this.state.columnNumber}
-                        onChange={this.onChange}
-                        onWheel={this.onWheel}
-                    />
+                <div className="popup">
+                    <div className="popup__column">
+                        <label htmlFor='columNumber'>Количество колонок</label>
+                        <InputNumber
+                            id='columnNumber'
+                            value={this.state.columnNumber}
+                            onChange={this.onChange}
+                            onWheel={this.onWheel}
+                        />
+                    </div>
 
-                    <label htmlFor='columnWidth'>Ширина колонки</label>
-                    <InputNumber
-                        id='columnWidth'
-                        value={this.state.columnWidth}
-                        onChange={this.onChange}
-                        onWheel={this.onWheel}
-                    />
+                    <div className="popup__column">
+                        <label htmlFor='columnWidth'>Ширина колонки</label>
+                        <InputNumber
+                            id='columnWidth'
+                            value={this.state.columnWidth}
+                            onChange={this.onChange}
+                            onWheel={this.onWheel}
+                        />
+                    </div>
 
-                    <label htmlFor='gutterWidth'>Ширина гаттеров</label>
-                    <InputNumber
-                        id='gutterWidth'
-                        value={this.state.gutterWidth}
-                        step={2}
-                        onChange={this.onChange}
-                        onWheel={this.onWheel}
-                    />
+                    <div className="popup__column">
+                        <label htmlFor='gutterWidth'>Ширина гаттеров</label>
+                        <InputNumber
+                            id='gutterWidth'
+                            value={this.state.gutterWidth}
+                            step={2}
+                            onChange={this.onChange}
+                            onWheel={this.onWheel}
+                        />
+                    </div>
 
-                    <label htmlFor='columnColor'>Цвет колонки</label>
-                    <InputColor
-                        id='columnColor'
-                        value={this.state.columnColor}
-                        onChange={this.onChange}
-                    />
+                    <div className="popup__column">
+                        <label htmlFor='columnColor'>Цвет колонки</label>
+                        <InputColor
+                            id='columnColor'
+                            value={this.state.columnColor}
+                            onChange={this.onChange}
+                        />
+                    </div>
 
-                    <label htmlFor='gutterColor'>Цвет гаттера</label>
-                    <InputColor
-                        id='gutterColor'
-                        value={this.state.gutterColor}
-                        onChange={this.onChange}
-                    />
+                    <div className="popup__column">
+                        <label htmlFor='gutterColor'>Цвет гаттера</label>
+                        <InputColor
+                            id='gutterColor'
+                            value={this.state.gutterColor}
+                            onChange={this.onChange}
+                        />
+                    </div>
 
-                    <label htmlFor='opacity'>Прозрачность</label>
-                    <InputNumber
-                        id='opacity'
-                        value={this.state.opacity}
-                        step={0.1}
-                        max={1}
-                        onChange={this.onChange}
-                        onWheel={this.onWheel}
-                    />
+                    <div className="popup__column">
+                        <label htmlFor='opacity'>Прозрачность</label>
+                        <InputNumber
+                            id='opacity'
+                            value={this.state.opacity}
+                            step={0.1}
+                            max={1}
+                            onChange={this.onChange}
+                            onWheel={this.onWheel}
+                        />
+                    </div>
 
-                    <label htmlFor='fluid'>Резиновый</label>
-                    <InputCheckbox
-                        id='fluid'
-                        onChange={this.onChange}
-                    />
+                    <div className="popup__column popup__column_line" />
 
-                    <label htmlFor='maxWidth'>Макс. ширина</label>
-                    <InputNumber
-                        id='maxWidth'
-                        value={this.state.maxWidth}
-                        step={10}
-                        onChange={this.onChange}
-                        onWheel={this.onWheel}
-                    />
+                    <div className="popup__column popup__column_fluid">
+                        <label htmlFor='fluid'>Резиновый</label>
+                        <InputCheckbox
+                            id='fluid'
+                            onChange={this.onChange}
+                        />
+                    </div>
+
+                    <div className="popup__column popup__column_max_width">
+                        <label htmlFor='maxWidth'>Макс. ширина</label>
+                        <InputNumber
+                            id='maxWidth'
+                            value={this.state.maxWidth}
+                            step={10}
+                            onChange={this.onChange}
+                            onWheel={this.onWheel}
+                        />
+                    </div>
                 </div>
                 <div>
                     <Grid

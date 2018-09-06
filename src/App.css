@@ -1,28 +1,42 @@
-.App {
-  text-align: center;
+.popup {
+    font-family: Roboto, serif;
+    width: 420px;
+    height: 200px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    background-color: #ffffff;
+    overflow: hidden;
+    padding: 25px 35px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 80px) 1px 80px;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+        ". . . line fluid"
+        ". . . line maxwidth"
+    ;
+
+    grid-gap: 24px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.popup__column_max_width {
+    grid-area: maxwidth;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.popup__column_fluid {
+    grid-area: fluid;
 }
 
-.App-title {
-  font-size: 1.5em;
+.popup__column_line {
+    grid-area: line;
+    background-color: #292b30;
 }
 
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.popup label {
+    color: #292b30;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    margin-bottom: 13px;
 }

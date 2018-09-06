@@ -1,0 +1,16 @@
+input[type="number"] {
+    border: none;
+    color: #27282a;
+    font-family: Roboto;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 38.82px;
+    letter-spacing: -0.3px;
+    max-width: 100%;
+    outline: none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}

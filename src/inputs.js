@@ -1,4 +1,5 @@
 import React from 'react';
+import './Inputs.css';
 
 export const InputNumber = (props) =>
     <input
