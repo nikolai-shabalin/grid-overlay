@@ -5,7 +5,6 @@ import Column from './Column';
 class Grid extends Component {
     render() {
         const className = this.props.fluid ? 'grid fluid ' : 'grid';
-        console.log(parseInt(this.props.maxWidth, 10) === 0);
         const styleGrid = {
             maxWidth: parseInt(this.props.maxWidth, 10) === 0 ? null : parseInt(this.props.maxWidth, 10)
         };
