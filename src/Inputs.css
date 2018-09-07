@@ -1,7 +1,7 @@
 input[type="number"] {
     border: none;
     color: #27282a;
-    font-family: Roboto;
+    font-family: Roboto, sans-serif;
     font-size: 32px;
     font-weight: 400;
     line-height: 38.82px;
