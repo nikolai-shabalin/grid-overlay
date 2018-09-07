@@ -14,13 +14,6 @@ export const InputNumber = (props) =>
     />;
 
 
-export const InputColor = (props) =>
-    <input
-        id={props.id}
-        type="color"
-        value={props.value}
-        onChange={props.onChange}
-    />;
 
 export const InputCheckbox = (props) =>
     <input

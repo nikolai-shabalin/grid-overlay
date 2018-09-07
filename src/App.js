@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
-import {InputNumber, InputColor, InputCheckbox} from './inputs';
+import {InputNumber, InputCheckbox} from './inputs';
+import ColorPicker from './ColorPicker';
 import Grid from './Grid';
 
 class App extends Component {
@@ -20,11 +21,26 @@ class App extends Component {
 
         this.onChange = this.onChange.bind(this);
         this.onWheel = this.onWheel.bind(this);
+        this.handleColorColumnChange = this.handleColorColumnChange.bind(this);
+        this.handleColorGutterChange = this.handleColorGutterChange.bind(this);
     }
 
     onChange(event) {
         this.changeState(event);
     }
+
+    handleColorColumnChange(color) {
+        this.setState({
+            columnColor: color.hex
+        })
+    };
+
+    handleColorGutterChange(color) {
+        this.setState({
+            gutterColor: color.hex
+        })
+    };
+
 
     onWheel(event) {
         this.changeState(event);
@@ -79,19 +95,19 @@ class App extends Component {
 
                     <div className="popup__column">
                         <label htmlFor='columnColor'>Цвет колонки</label>
-                        <InputColor
+                        <ColorPicker
                             id='columnColor'
-                            value={this.state.columnColor}
-                            onChange={this.onChange}
+                            color={this.state.columnColor}
+                            onChange={this.handleColorColumnChange}
                         />
                     </div>
 
                     <div className="popup__column">
                         <label htmlFor='gutterColor'>Цвет гаттера</label>
-                        <InputColor
+                        <ColorPicker
                             id='gutterColor'
-                            value={this.state.gutterColor}
-                            onChange={this.onChange}
+                            color={this.state.gutterColor}
+                            onChange={this.handleColorGutterChange}
                         />
                     </div>
 
