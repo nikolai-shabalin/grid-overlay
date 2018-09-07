@@ -144,18 +144,6 @@ class App extends Component {
                         />
                     </div>
                 </div>
-                <div>
-                    <Grid
-                        maxWidth={this.state.maxWidth}
-                        fluid={this.state.fluid}
-                        columnNumber={this.state.columnNumber}
-                        columnWidth={this.state.columnWidth}
-                        gutterWidth={this.state.gutterWidth}
-                        columnColor={this.state.columnColor}
-                        gutterColor={this.state.gutterColor}
-                        opacity={this.state.opacity}
-                    />
-                </div>
             </div>
         );
     }
