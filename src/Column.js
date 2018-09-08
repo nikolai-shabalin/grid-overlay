@@ -1,6 +1,16 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Gutter from './Gutter';
 import './Column.css';
+
+const columnStyle = {
+    display: 'flex',
+    flexFlow: 'row nowrap',
+    height: '100%',
+    justifyContent: 'center',
+    textAlign: 'center',
+    flexGrow: 1
+};
+const hasGutter = parseInt(props.gutterWidth) === 0;
 
 function hexToRgb(hex) {
     const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -13,13 +23,19 @@ function getStyle(props) {
     return {
         width,
         backgroundColor: `rgba(${hexToRgb(props.columnColor)}, ${props.opacity})`,
-        flexGrow: 1
+        flexGrow: 1,
+        display: 'flex',
+        flexFlow: 'row nowrap',
+        height: '100%',
+        justifyContent: 'center',
+        textAlign: 'center',
+        boxShadow: hasGutter ? '-1px 0 0 black inset' : null
     }
 }
 
 function columnWithGutter(props) {
     return (
-        <div className="column" style={{flexGrow: 1}}>
+        <div className="column" style={columnStyle}>
             <Gutter
                 width={parseInt(props.gutterWidth, 10) / 2}
                 backgroundColor={`rgba(${hexToRgb(props.gutterColor)}, ${props.opacity})`}
@@ -37,6 +53,6 @@ function columnWidthoutGutter(props) {
     return (<div className="column shadow" style={getStyle(props)} > {props.children} </div>);
 }
 
-const Column = (props) => parseInt(props.gutterWidth) === 0 ? columnWidthoutGutter(props) : columnWithGutter(props);
+const Column = (props) => hasGutter ? columnWidthoutGutter(props) : columnWithGutter(props);
 
 export default Column;

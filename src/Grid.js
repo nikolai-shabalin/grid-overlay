@@ -1,12 +1,21 @@
-import './Grid.css';
 import React, {Component} from 'react';
 import Column from './Column';
 
 class Grid extends Component {
     render() {
         const className = this.props.fluid ? 'grid fluid ' : 'grid';
-        const styleGrid = {
-            maxWidth: parseInt(this.props.maxWidth, 10) === 0 ? null : parseInt(this.props.maxWidth, 10)
+
+        const style = {
+            maxWidth: parseInt(this.props.maxWidth, 10) === 0 ? null : parseInt(this.props.maxWidth, 10),
+            display: 'flex',
+            flexFlow: 'row nowrap',
+            position: 'fixed',
+            zIndex: 9999,
+            left: '50%',
+            transform: 'translateX(-50%)',
+            height: '100vh',
+            top: 0,
+            width: this.props.fluid ? '100%' : null
         };
 
         const columns = [];
@@ -27,7 +36,7 @@ class Grid extends Component {
         }
 
         return (
-            <div className={className} style={styleGrid}>
+            <div className={className} style={style}>
                 {columns}
             </div>
         )

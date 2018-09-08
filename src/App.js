@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
+
 import {InputNumber, InputCheckbox} from './inputs';
 import ColorPicker from './ColorPicker';
-import Grid from './Grid';
 
 class App extends Component {
     constructor(props) {
@@ -58,7 +58,15 @@ class App extends Component {
         }
     }
 
+    sendInContent(data) {
+        window.chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+            window.chrome.tabs.sendMessage(tabs[0].id, data);
+        });
+    }
+
     render() {
+        this.sendInContent(this.state);
+
         return (
             <div>
                 <div className="popup">
