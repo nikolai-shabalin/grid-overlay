@@ -12,7 +12,7 @@
   },
   "author": "Nikolai Shabalin <dev.nikolai.shabalin@gmail.com>, Anastasia Grabovaia <A.grabovaia@gmail.com>",
   "content_scripts" : [{
-    "js": ["content/content.js"],
+    "js": ["./static/js/content.js"],
     "matches" : ["http://*/*", "https://*/*"]
   }],
   "permissions": [
