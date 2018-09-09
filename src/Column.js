@@ -1,6 +1,5 @@
 import React from 'react';
 import Gutter from './Gutter';
-import './Column.css';
 
 const columnStyle = {
     display: 'flex',
@@ -10,7 +9,7 @@ const columnStyle = {
     textAlign: 'center',
     flexGrow: 1
 };
-const hasGutter = parseInt(props.gutterWidth) === 0;
+const hasGutter = (props) => parseInt(props.gutterWidth) === 0;
 
 function hexToRgb(hex) {
     const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -29,7 +28,7 @@ function getStyle(props) {
         height: '100%',
         justifyContent: 'center',
         textAlign: 'center',
-        boxShadow: hasGutter ? '-1px 0 0 black inset' : null
+        boxShadow: hasGutter(props) ? '-1px 0 0 black inset' : null
     }
 }
 
@@ -53,6 +52,6 @@ function columnWidthoutGutter(props) {
     return (<div className="column shadow" style={getStyle(props)} > {props.children} </div>);
 }
 
-const Column = (props) => hasGutter ? columnWidthoutGutter(props) : columnWithGutter(props);
+const Column = (props) => hasGutter(props) ? columnWidthoutGutter(props) : columnWithGutter(props);
 
 export default Column;

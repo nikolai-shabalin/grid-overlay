@@ -13,8 +13,6 @@ export const InputNumber = (props) =>
         onWheel={props.onWheel}
     />;
 
-
-
 export const InputCheckbox = (props) =>
     <input
         id={props.id}
