@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { ChromePicker } from 'react-color';
+import './Colorpicker.css';
 
 function hexToRgb(hex) {
     const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -48,7 +49,7 @@ export default class ColorPicker extends Component {
         };
 
         return (
-            <div>
+            <div className="colorPicker">
                 <button style={div} onClick={this.handleClick} />
 
                 {this.state.displayColorPicker ?

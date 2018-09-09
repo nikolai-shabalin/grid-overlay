@@ -19,6 +19,7 @@
     grid-gap: 24px;
 }
 
+/*STATE*/
 .popup__column_max_width {
     grid-area: maxwidth;
 }
