@@ -15,7 +15,8 @@ class Grid extends Component {
             transform: 'translateX(-50%)',
             height: '100vh',
             top: 0,
-            width: this.props.fluid ? '100%' : null
+            width: this.props.fluid ? '100%' : null,
+            pointerEvents: 'none'
         };
 
         const columns = [];

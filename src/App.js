@@ -8,16 +8,21 @@ class App extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            columnNumber: 12,
-            columnWidth: 60,
-            gutterWidth: 20,
-            columnColor: '#ff00e9',
-            gutterColor: '#663399',
-            opacity: 0.3,
-            fluid: false,
-            maxWidth: 0
-        };
+        console.log(props.state);
+        if (props.state) {
+            this.state = props.state;
+        } else {
+            this.state = {
+                columnNumber: 12,
+                columnWidth: 60,
+                gutterWidth: 20,
+                columnColor: '#ff00e9',
+                gutterColor: '#663399',
+                opacity: 0.3,
+                fluid: false,
+                maxWidth: 0
+            };
+        }
 
         this.onChange = this.onChange.bind(this);
         this.onWheel = this.onWheel.bind(this);
@@ -58,6 +63,10 @@ class App extends Component {
         }
     }
 
+    setInStorage(data) {
+        window.chrome.storage.local.set({'state': JSON.stringify(data)});
+    }
+
     sendInContent(data) {
         window.chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
             window.chrome.tabs.sendMessage(tabs[0].id, data);
@@ -65,6 +74,7 @@ class App extends Component {
     }
 
     render() {
+        this.setInStorage(this.state);
         this.sendInContent(this.state);
 
         return (

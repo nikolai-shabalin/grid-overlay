@@ -3,4 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+window.chrome.storage.local.get('state', (state) => {
+    if (state) {
+        ReactDOM.render(
+            <App
+                state={JSON.parse(state.state)}
+            />,
+            document.getElementById('root'));
+    } else {
+        ReactDOM.render(<App />, document.getElementById('root'));
+    }
+});
+
