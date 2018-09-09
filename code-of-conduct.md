@@ -41,5 +41,3 @@
 Данный Кодекс Поведения основан на [Contributor Covenant][сайт], версия 1.4.0 доступна на https://www.contributor-covenant.org/ru/version/1/4/code-of-conduct.html
 
 [сайт]: https://www.contributor-covenant.org
-
-UP
