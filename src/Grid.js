@@ -3,7 +3,6 @@ import Column from './Column';
 
 class Grid extends Component {
     render() {
-        const className = this.props.fluid ? 'grid fluid ' : 'grid';
 
         const style = {
             maxWidth: parseInt(this.props.maxWidth, 10) === 0 ? null : parseInt(this.props.maxWidth, 10),
@@ -37,7 +36,7 @@ class Grid extends Component {
         }
 
         return (
-            <div className={className} style={style}>
+            <div style={style}>
                 {columns}
             </div>
         )

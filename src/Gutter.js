@@ -7,7 +7,7 @@ class Gutter extends Component {
         const style = {width, backgroundColor, height: '100%'};
 
         return (
-            <div className="gutter" style={style}/>
+            <div style={style}/>
         )
     }
 

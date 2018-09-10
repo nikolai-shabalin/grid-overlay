@@ -34,7 +34,7 @@ function getStyle(props) {
 
 function columnWithGutter(props) {
     return (
-        <div className="column" style={columnStyle}>
+        <div style={columnStyle}>
             <Gutter
                 width={parseInt(props.gutterWidth, 10) / 2}
                 backgroundColor={`rgba(${hexToRgb(props.gutterColor)}, ${props.opacity})`}
@@ -49,7 +49,7 @@ function columnWithGutter(props) {
 }
 
 function columnWidthoutGutter(props) {
-    return (<div className="column shadow" style={getStyle(props)} > {props.children} </div>);
+    return (<div style={getStyle(props)} > {props.children} </div>);
 }
 
 const Column = (props) => hasGutter(props) ? columnWidthoutGutter(props) : columnWithGutter(props);
