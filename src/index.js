@@ -5,7 +5,7 @@ import App from './App';
 
 
 window.chrome.storage.local.get('state', (state) => {
-    if (state) {
+    if (state.state) {
         ReactDOM.render(
             <App
                 state={JSON.parse(state.state)}
