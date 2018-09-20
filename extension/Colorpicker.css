@@ -1,0 +1,4 @@
+.colorPicker > button + div {
+    top: 3px;
+    right: 10px;
+}

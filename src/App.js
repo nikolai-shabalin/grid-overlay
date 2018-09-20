@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Grid from './Grid';
 import './App.css';
 
 import {InputNumber, InputCheckbox} from './inputs';
@@ -63,104 +64,106 @@ class App extends Component {
         }
     }
 
-    setInStorage(data) {
-        window.chrome.storage.local.set({'state': JSON.stringify(data)});
-    }
-
-    sendInContent(data) {
-        window.chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-            window.chrome.tabs.sendMessage(tabs[0].id, data);
-        });
-    }
-
     render() {
-        this.setInStorage(this.state);
-        this.sendInContent(this.state);
 
         return (
             <div>
-                <div className="popup">
-                    <div className="popup__column">
-                        <label htmlFor='columNumber'>Количество колонок</label>
-                        <InputNumber
-                            id='columnNumber'
-                            value={this.state.columnNumber}
-                            onChange={this.onChange}
-                            onWheel={this.onWheel}
-                        />
-                    </div>
+                <div>
+                    <div className="popup">
+                        <div className="popup__column">
+                            <label htmlFor='columNumber'>Количество колонок</label>
+                            <InputNumber
+                                id='columnNumber'
+                                value={this.state.columnNumber}
+                                onChange={this.onChange}
+                                onWheel={this.onWheel}
+                            />
+                        </div>
 
-                    <div className="popup__column">
-                        <label htmlFor='columnWidth'>Ширина колонки</label>
-                        <InputNumber
-                            id='columnWidth'
-                            value={this.state.columnWidth}
-                            onChange={this.onChange}
-                            onWheel={this.onWheel}
-                        />
-                    </div>
+                        <div className="popup__column">
+                            <label htmlFor='columnWidth'>Ширина колонки</label>
+                            <InputNumber
+                                id='columnWidth'
+                                value={this.state.columnWidth}
+                                onChange={this.onChange}
+                                onWheel={this.onWheel}
+                            />
+                        </div>
 
-                    <div className="popup__column">
-                        <label htmlFor='gutterWidth'>Ширина гаттеров</label>
-                        <InputNumber
-                            id='gutterWidth'
-                            value={this.state.gutterWidth}
-                            step={2}
-                            onChange={this.onChange}
-                            onWheel={this.onWheel}
-                        />
-                    </div>
+                        <div className="popup__column">
+                            <label htmlFor='gutterWidth'>Ширина гаттеров</label>
+                            <InputNumber
+                                id='gutterWidth'
+                                value={this.state.gutterWidth}
+                                step={2}
+                                onChange={this.onChange}
+                                onWheel={this.onWheel}
+                            />
+                        </div>
 
-                    <div className="popup__column">
-                        <label htmlFor='columnColor'>Цвет колонки</label>
-                        <ColorPicker
-                            id='columnColor'
-                            color={this.state.columnColor}
-                            onChange={this.handleColorColumnChange}
-                        />
-                    </div>
+                        <div className="popup__column">
+                            <label htmlFor='columnColor'>Цвет колонки</label>
+                            <ColorPicker
+                                id='columnColor'
+                                color={this.state.columnColor}
+                                onChange={this.handleColorColumnChange}
+                            />
+                        </div>
 
-                    <div className="popup__column">
-                        <label htmlFor='gutterColor'>Цвет гаттера</label>
-                        <ColorPicker
-                            id='gutterColor'
-                            color={this.state.gutterColor}
-                            onChange={this.handleColorGutterChange}
-                        />
-                    </div>
+                        <div className="popup__column">
+                            <label htmlFor='gutterColor'>Цвет гаттера</label>
+                            <ColorPicker
+                                id='gutterColor'
+                                color={this.state.gutterColor}
+                                onChange={this.handleColorGutterChange}
+                            />
+                        </div>
 
-                    <div className="popup__column">
-                        <label htmlFor='opacity'>Прозрачность</label>
-                        <InputNumber
-                            id='opacity'
-                            value={this.state.opacity}
-                            step={0.1}
-                            max={1}
-                            onChange={this.onChange}
-                            onWheel={this.onWheel}
-                        />
-                    </div>
+                        <div className="popup__column">
+                            <label htmlFor='opacity'>Прозрачность</label>
+                            <InputNumber
+                                id='opacity'
+                                value={this.state.opacity}
+                                step={0.1}
+                                max={1}
+                                onChange={this.onChange}
+                                onWheel={this.onWheel}
+                            />
+                        </div>
 
-                    <div className="popup__column popup__column_line" />
+                        <div className="popup__column popup__column_line"/>
 
-                    <div className="popup__column popup__column_fluid">
-                        <label htmlFor='fluid'>Резиновый</label>
-                        <InputCheckbox
-                            id='fluid'
-                            onChange={this.onChange}
-                        />
-                    </div>
+                        <div className="popup__column popup__column_fluid">
+                            <label htmlFor='fluid'>Резиновый</label>
+                            <InputCheckbox
+                                id='fluid'
+                                onChange={this.onChange}
+                            />
+                        </div>
 
-                    <div className="popup__column popup__column_max_width">
-                        <label htmlFor='maxWidth'>Макс. ширина</label>
-                        <InputNumber
-                            id='maxWidth'
-                            value={this.state.maxWidth}
-                            step={10}
-                            onChange={this.onChange}
-                            onWheel={this.onWheel}
-                        />
+                        <div className="popup__column popup__column_max_width">
+                            <label htmlFor='maxWidth'>Макс. ширина</label>
+                            <InputNumber
+                                id='maxWidth'
+                                value={this.state.maxWidth}
+                                step={10}
+                                onChange={this.onChange}
+                                onWheel={this.onWheel}
+                            />
+                        </div>
                     </div>
+                </div>
+                <div>
+                    <Grid
+                        maxWidth={this.state.maxWidth}
+                        fluid={this.state.fluid}
+                        columnNumber={this.state.columnNumber}
+                        columnWidth={this.state.columnWidth}
+                        gutterWidth={this.state.gutterWidth}
+                        columnColor={this.state.columnColor}
+                        gutterColor={this.state.gutterColor}
+                        opacity={this.state.opacity}
+                    />
                 </div>
             </div>
         );
