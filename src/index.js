@@ -4,15 +4,5 @@ import './index.css';
 import App from './App';
 
 
-window.chrome.storage.local.get('state', (state) => {
-    if (state.state) {
-        ReactDOM.render(
-            <App
-                state={JSON.parse(state.state)}
-            />,
-            document.getElementById('root'));
-    } else {
-        ReactDOM.render(<App />, document.getElementById('root'));
-    }
-});
+ReactDOM.render(<App />, document.getElementById('root'));
 
