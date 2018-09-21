@@ -14,8 +14,11 @@ export const InputNumber = (props) =>
     />;
 
 export const InputCheckbox = (props) =>
-    <input
-        id={props.id}
-        type="checkbox"
-        onChange={props.onChange}
-    />;
+    <div className={'inputNumberWrapper'}>
+        <input
+            id={props.id}
+            type="checkbox"
+            onChange={props.onChange}
+        />
+        <label htmlFor={props.id}className={'inputNumber'} />
+    </div>;

@@ -71,7 +71,7 @@ class App extends Component {
                 <div>
                     <div className="popup">
                         <div className="popup__column">
-                            <label htmlFor='columNumber'>Количество колонок</label>
+                            <label htmlFor='columNumber' className={'label'}>Количество колонок</label>
                             <InputNumber
                                 id='columnNumber'
                                 value={this.state.columnNumber}
@@ -81,7 +81,7 @@ class App extends Component {
                         </div>
 
                         <div className="popup__column">
-                            <label htmlFor='columnWidth'>Ширина колонки</label>
+                            <label htmlFor='columnWidth' className={'label'}>Ширина колонки</label>
                             <InputNumber
                                 id='columnWidth'
                                 value={this.state.columnWidth}
@@ -91,7 +91,7 @@ class App extends Component {
                         </div>
 
                         <div className="popup__column">
-                            <label htmlFor='gutterWidth'>Ширина гаттеров</label>
+                            <label htmlFor='gutterWidth' className={'label'}>Ширина гаттеров</label>
                             <InputNumber
                                 id='gutterWidth'
                                 value={this.state.gutterWidth}
@@ -102,7 +102,7 @@ class App extends Component {
                         </div>
 
                         <div className="popup__column">
-                            <label htmlFor='columnColor'>Цвет колонки</label>
+                            <label htmlFor='columnColor' className={'label'}>Цвет колонки</label>
                             <ColorPicker
                                 id='columnColor'
                                 color={this.state.columnColor}
@@ -111,7 +111,7 @@ class App extends Component {
                         </div>
 
                         <div className="popup__column">
-                            <label htmlFor='gutterColor'>Цвет гаттера</label>
+                            <label htmlFor='gutterColor' className={'label'}>Цвет гаттера</label>
                             <ColorPicker
                                 id='gutterColor'
                                 color={this.state.gutterColor}
@@ -120,7 +120,7 @@ class App extends Component {
                         </div>
 
                         <div className="popup__column">
-                            <label htmlFor='opacity'>Прозрачность</label>
+                            <label htmlFor='opacity' className={'label'}>Прозрачность</label>
                             <InputNumber
                                 id='opacity'
                                 value={this.state.opacity}
@@ -134,15 +134,15 @@ class App extends Component {
                         <div className="popup__column popup__column_line"/>
 
                         <div className="popup__column popup__column_fluid">
-                            <label htmlFor='fluid'>Резиновый</label>
                             <InputCheckbox
                                 id='fluid'
                                 onChange={this.onChange}
                             />
+                            <label htmlFor='fluid' className={'label'}>Резиновый</label>
                         </div>
 
                         <div className="popup__column popup__column_max_width">
-                            <label htmlFor='maxWidth'>Макс. ширина</label>
+                            <label htmlFor='maxWidth' className={'label'}>Макс. ширина</label>
                             <InputNumber
                                 id='maxWidth'
                                 value={this.state.maxWidth}

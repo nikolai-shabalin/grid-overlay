@@ -9,7 +9,7 @@
     padding: 25px 35px;
 
     display: grid;
-    grid-template-columns: repeat(3, 80px) 1px 80px;
+    grid-template-columns: repeat(3, 80px) 1px 90px;
     grid-template-rows: repeat(2, 1fr);
     grid-template-areas:
         ". . . line fluid"
@@ -33,11 +33,12 @@
     background-color: #292b30;
 }
 
-.popup label {
+.label {
     color: #292b30;
     display: inline-block;
     font-size: 12px;
     font-weight: 400;
     line-height: 16px;
     margin-bottom: 13px;
+    cursor: pointer;
 }
