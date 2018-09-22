@@ -65,92 +65,89 @@ class App extends Component {
     }
 
     render() {
-
         return (
             <div>
-                <div>
-                    <div className="popup">
-                        <div className="popup__column">
-                            <label htmlFor='columNumber' className={'label'}>Количество колонок</label>
-                            <InputNumber
-                                id='columnNumber'
-                                value={this.state.columnNumber}
-                                onChange={this.onChange}
-                                onWheel={this.onWheel}
-                            />
-                        </div>
+                <div className="popup">
+                    <div className="popup__column">
+                        <label htmlFor='columNumber' className={'label'}>Количество колонок</label>
+                        <InputNumber
+                            id='columnNumber'
+                            value={this.state.columnNumber}
+                            onChange={this.onChange}
+                            onWheel={this.onWheel}
+                        />
+                    </div>
 
-                        <div className="popup__column">
-                            <label htmlFor='columnWidth' className={'label'}>Ширина колонки</label>
-                            <InputNumber
-                                id='columnWidth'
-                                value={this.state.columnWidth}
-                                onChange={this.onChange}
-                                onWheel={this.onWheel}
-                            />
-                        </div>
+                    <div className="popup__column">
+                        <label htmlFor='columnWidth' className={'label'}>Ширина колонки</label>
+                        <InputNumber
+                            id='columnWidth'
+                            value={this.state.columnWidth}
+                            onChange={this.onChange}
+                            onWheel={this.onWheel}
+                        />
+                    </div>
 
-                        <div className="popup__column">
-                            <label htmlFor='gutterWidth' className={'label'}>Ширина гаттеров</label>
-                            <InputNumber
-                                id='gutterWidth'
-                                value={this.state.gutterWidth}
-                                step={2}
-                                onChange={this.onChange}
-                                onWheel={this.onWheel}
-                            />
-                        </div>
+                    <div className="popup__column">
+                        <label htmlFor='gutterWidth' className={'label'}>Ширина гаттеров</label>
+                        <InputNumber
+                            id='gutterWidth'
+                            value={this.state.gutterWidth}
+                            step={2}
+                            onChange={this.onChange}
+                            onWheel={this.onWheel}
+                        />
+                    </div>
 
-                        <div className="popup__column">
-                            <label htmlFor='columnColor' className={'label'}>Цвет колонки</label>
-                            <ColorPicker
-                                id='columnColor'
-                                color={this.state.columnColor}
-                                onChange={this.handleColorColumnChange}
-                            />
-                        </div>
+                    <div className="popup__column">
+                        <label htmlFor='columnColor' className={'label'}>Цвет колонки</label>
+                        <ColorPicker
+                            id='columnColor'
+                            color={this.state.columnColor}
+                            onChange={this.handleColorColumnChange}
+                        />
+                    </div>
 
-                        <div className="popup__column">
-                            <label htmlFor='gutterColor' className={'label'}>Цвет гаттера</label>
-                            <ColorPicker
-                                id='gutterColor'
-                                color={this.state.gutterColor}
-                                onChange={this.handleColorGutterChange}
-                            />
-                        </div>
+                    <div className="popup__column">
+                        <label htmlFor='gutterColor' className={'label'}>Цвет гаттера</label>
+                        <ColorPicker
+                            id='gutterColor'
+                            color={this.state.gutterColor}
+                            onChange={this.handleColorGutterChange}
+                        />
+                    </div>
 
-                        <div className="popup__column">
-                            <label htmlFor='opacity' className={'label'}>Прозрачность</label>
-                            <InputNumber
-                                id='opacity'
-                                value={this.state.opacity}
-                                step={0.1}
-                                max={1}
-                                onChange={this.onChange}
-                                onWheel={this.onWheel}
-                            />
-                        </div>
+                    <div className="popup__column">
+                        <label htmlFor='opacity' className={'label'}>Прозрачность</label>
+                        <InputNumber
+                            id='opacity'
+                            value={this.state.opacity}
+                            step={0.1}
+                            max={1}
+                            onChange={this.onChange}
+                            onWheel={this.onWheel}
+                        />
+                    </div>
 
-                        <div className="popup__column popup__column_line"/>
+                    <div className="popup__column popup__column_line"/>
 
-                        <div className="popup__column popup__column_fluid">
-                            <InputCheckbox
-                                id='fluid'
-                                onChange={this.onChange}
-                            />
-                            <label htmlFor='fluid' className={'label'}>Резиновый</label>
-                        </div>
+                    <div className="popup__column popup__column_fluid">
+                        <InputCheckbox
+                            id='fluid'
+                            onChange={this.onChange}
+                        />
+                        <label htmlFor='fluid' className={'label'}>Резиновый</label>
+                    </div>
 
-                        <div className="popup__column popup__column_max_width">
-                            <label htmlFor='maxWidth' className={'label'}>Макс. ширина</label>
-                            <InputNumber
-                                id='maxWidth'
-                                value={this.state.maxWidth}
-                                step={10}
-                                onChange={this.onChange}
-                                onWheel={this.onWheel}
-                            />
-                        </div>
+                    <div className="popup__column popup__column_max_width">
+                        <label htmlFor='maxWidth' className={'label'}>Макс. ширина</label>
+                        <InputNumber
+                            id='maxWidth'
+                            value={this.state.maxWidth}
+                            step={10}
+                            onChange={this.onChange}
+                            onWheel={this.onWheel}
+                        />
                     </div>
                 </div>
                 <div>
