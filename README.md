@@ -1,5 +1,5 @@
 # Grid overlay
-Расширение для google chrome.
+Расширение для google chrome. [Ссылка для скачивания](https://chrome.google.com/webstore/detail/grid-overlay/obbmolmignklgjleehhcilnllicpbcdj?hl=en-US)
 
 Позволяет накинуть сетку на сайт.
 
