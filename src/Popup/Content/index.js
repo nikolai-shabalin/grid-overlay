@@ -6,33 +6,42 @@ import InputCheckbox from '../Inputs/Checkbox';
 
 export default class Content extends React.Component {
   render() {
-    const {columnNumber, columnWidth, gutterWidth, opacity, columnColor, gutterColor, onChange, onChangeColor} = this.props.settings;
+    const {
+      columnNumber,
+      columnWidth,
+      gutterWidth,
+      opacity,
+      columnColor,
+      gutterColor,
+      maxWidth,
+      onChange,
+      onChangeColor} = this.props.settings;
 
     return (
       <div className={css.content}>
         <div className={css.cell}>
           <label htmlFor="columnNumber" className={css.label}>Количество колонок</label>
-          <InputNumber id={"columnNumber"} value={columnNumber} onChange={onChange} />
+          <InputNumber id={"columnNumber"} value={columnNumber} onChange={onChange}/>
         </div>
         <div className={css.cell}>
           <label htmlFor="columnWidth" className={css.label}>Ширина колонки</label>
-          <InputNumber id={"columnWidth"} value={columnWidth} onChange={onChange} />
+          <InputNumber id={"columnWidth"} value={columnWidth} onChange={onChange}/>
         </div>
         <div className={css.cell}>
           <label htmlFor="gutterWidth" className={css.label}>Ширина гаттеров</label>
-          <InputNumber id={"gutterWidth"} value={gutterWidth} onChange={onChange} />
+          <InputNumber id={"gutterWidth"} value={gutterWidth} onChange={onChange}/>
         </div>
         <div className={css.cell}>
           <label htmlFor="columnColor" className={css.label}>Цвет колонки</label>
-          <InputColor id={"columnColor"} color={columnColor} onChangeColor={onChangeColor} />
+          <InputColor id={"columnColor"} color={columnColor} onChangeColor={onChangeColor}/>
         </div>
         <div className={css.cell}>
           <label htmlFor="gutterColor" className={css.label}>Цвет гаттера</label>
-          <InputColor id={"gutterColor"} color={gutterColor} onChangeColor={onChangeColor} />
+          <InputColor id={"gutterColor"} color={gutterColor} onChangeColor={onChangeColor}/>
         </div>
         <div className={css.cell}>
           <label htmlFor="opacity" className={css.label}>Прозрачность</label>
-          <InputNumber id={"opacity"} value={opacity} step={0.1} max={1} onChange={onChange}  />
+          <InputNumber id={"opacity"} value={opacity} step={0.1} max={1} onChange={onChange}/>
         </div>
 
         <div className={css.line}/>
@@ -43,7 +52,7 @@ export default class Content extends React.Component {
         </div>
         <div className={css.maxWidth}>
           <label htmlFor="maxWidth" className={css.label}>Макс. ширина</label>
-          <InputNumber id={"maxWidth"}/>
+          <InputNumber id={"maxWidth"} value={maxWidth} step={10} onChange={onChange}/>
         </div>
       </div>
     )
