@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Popup from './Popup';
+import App from './App';
 
 const body = document.querySelector('body');
 
@@ -16,4 +16,4 @@ app.append(popup);
 app.append(grid);
 body.append(app);
 
-ReactDOM.render(<Popup />, popup);
+ReactDOM.render(<App gridNode={grid} />, popup);
