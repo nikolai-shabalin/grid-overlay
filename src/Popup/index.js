@@ -26,6 +26,12 @@ export default class Popup extends React.Component {
     });
   };
 
+  handleChangeColor = (id, color) => {
+    this.setState({
+      [id] : color
+    });
+  };
+
   handleMinimize = () => {
     this.setState({
       isMinimize: !this.state.isMinimize,
@@ -40,7 +46,7 @@ export default class Popup extends React.Component {
 
   render() {
     const { isClose, isMinimize } = this.state;
-    const settings = {...this.state, onChange: this.handleChange};
+    const settings = {...this.state, onChange: this.handleChange, onChangeColor: this.handleChangeColor};
 
     return isClose ? null : (
       <div className={css.Popup}>

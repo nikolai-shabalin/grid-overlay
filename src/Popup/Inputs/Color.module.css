@@ -10,3 +10,11 @@
     bottom: 0;
     left: 0;
 }
+
+.button {
+    width: 24px;
+    height: 25px;
+    border-radius: 50%;
+    border: none;
+    outline: none
+}

@@ -2,10 +2,15 @@ import React from 'react';
 import {ChromePicker} from 'react-color';
 import css from './Color.module.css';
 
-function hexToRgb(hex) {
+const hexToRgb = hex => {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result ? `${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)}` : null;
-}
+};
+
+const button = color => ({
+  boxShadow: `0 5px 10px rgba(${hexToRgb(color)}, 0.2)`,
+  backgroundColor: color,
+});
 
 export default class ColorPicker extends React.Component {
   state = {
@@ -22,27 +27,18 @@ export default class ColorPicker extends React.Component {
 
   render() {
     const {displayColorPicker} = this.state;
-    const {color, onChange} = this.props;
+    const {id, color, onChangeColor} = this.props;
 
-    const button = {
-      width: '24px',
-      height: '25px',
-      boxShadow: `0 5px 10px rgba(${hexToRgb(color)}, 0.2)`,
-      backgroundColor: color,
-      borderRadius: '50%',
-      border: 'none',
-      outline: 'none'
-    };
     return (
       <div className="colorPicker">
-        <button style={button} onClick={this.handleClick}/>
+        <button style={button(color)} className={css.button} onClick={this.handleClick}/>
 
         {displayColorPicker ?
-          <div style={css.popover}>
-            <div style={css.cover} onClick={this.handleClose}/>
+          <div className={css.popover}>
+            <div className={css.cover} onClick={this.handleClose}/>
             <ChromePicker
               color={color}
-              onChange={onChange}
+              onChange={({hex}) => onChangeColor(id, hex)}
             />
           </div> :
           null
@@ -54,5 +50,5 @@ export default class ColorPicker extends React.Component {
 
 ColorPicker.defaultProps = {
   color: '#000000',
-  onChange: () => {},
+  onChangeColor: () => {},
 };

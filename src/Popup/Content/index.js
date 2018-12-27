@@ -5,7 +5,7 @@ import InputColor from '../Inputs/Color';
 
 export default class Content extends React.Component {
   render() {
-    const {columnNumber, columnWidth, gutterWidth, opacity, onChange} = this.props.settings;
+    const {columnNumber, columnWidth, gutterWidth, opacity, columnColor, gutterColor, onChange, onChangeColor} = this.props.settings;
 
     return (
       <div className={css.content}>
@@ -19,19 +19,19 @@ export default class Content extends React.Component {
         </div>
         <div className={css.cell}>
           <label htmlFor="gutterWidth" className={css.label}>Ширина гаттеров</label>
-          <InputNumber id={"gutterWidth"} value={gutterWidth} onChange={onChange}/>
+          <InputNumber id={"gutterWidth"} value={gutterWidth} onChange={onChange} />
         </div>
         <div className={css.cell}>
           <label htmlFor="columnColor" className={css.label}>Цвет колонки</label>
-          <InputColor id={"columnColor"} />
+          <InputColor id={"columnColor"} color={columnColor} onChangeColor={onChangeColor} />
         </div>
         <div className={css.cell}>
           <label htmlFor="gutterColor" className={css.label}>Цвет гаттера</label>
-          <InputColor id={"gutterColor"} />
+          <InputColor id={"gutterColor"} color={gutterColor} onChangeColor={onChangeColor} />
         </div>
         <div className={css.cell}>
           <label htmlFor="opacity" className={css.label}>Прозрачность</label>
-          <InputNumber id={"opacity"} value={opacity} step={0.1} max={1} onChange={onChange} />
+          <InputNumber id={"opacity"} value={opacity} step={0.1} max={1} onChange={onChange}  />
         </div>
 
         <div className={css.line}/>
