@@ -2,6 +2,7 @@ import React from 'react';
 import css from "./content.module.css";
 import InputNumber from '../Inputs/Number';
 import InputColor from '../Inputs/Color';
+import InputCheckbox from '../Inputs/Checkbox';
 
 export default class Content extends React.Component {
   render() {
@@ -37,6 +38,7 @@ export default class Content extends React.Component {
         <div className={css.line}/>
 
         <div className={css.fluid}>
+          <InputCheckbox id={"fluid"}/>
           <label htmlFor="fluid" className={css.label}>Резиновый</label>
         </div>
         <div className={css.maxWidth}>

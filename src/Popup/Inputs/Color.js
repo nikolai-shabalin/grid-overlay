@@ -30,7 +30,7 @@ export default class ColorPicker extends React.Component {
     const {id, color, onChangeColor} = this.props;
 
     return (
-      <div className="colorPicker">
+      <div>
         <button style={button(color)} className={css.button} onClick={this.handleClick}/>
 
         {displayColorPicker ?

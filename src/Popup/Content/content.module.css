@@ -30,6 +30,7 @@
 }
 
 .label {
+    user-select: none;
     color: #292b30;
     display: inline-block;
     font-size: 12px;
