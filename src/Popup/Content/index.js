@@ -29,7 +29,7 @@ export default class Content extends React.Component {
         </div>
         <div className={css.cell}>
           <label htmlFor="gutterWidth" className={css.label}>Ширина гаттеров</label>
-          <InputNumber id={"gutterWidth"} value={gutterWidth} onChange={onChange}/>
+          <InputNumber id={"gutterWidth"} value={gutterWidth} onChange={onChange} step={2}/>
         </div>
         <div className={css.cell}>
           <label htmlFor="columnColor" className={css.label}>Цвет колонки</label>
