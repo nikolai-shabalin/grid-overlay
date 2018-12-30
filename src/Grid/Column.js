@@ -1,22 +1,20 @@
 import React from 'react';
-import Gutter from './Gutter';
-import {hexToRgb} from '../utils';
+import {hexToRgb, isGutterExist} from '../utils';
 import css from './Column.module.css';
 
 export default class Column extends React.Component {
-    render = () => {
-        const { columnColor, number, columnWidth, opacity, gutterColor, gutterWidth } = this.props.settings;
-        const style = {
+    getStyle() {
+        const { columnColor, columnWidth, opacity, gutterColor, gutterWidth } = this.props.settings;
+
+        return {
             backgroundColor: `rgba(${hexToRgb(columnColor)}, ${opacity})`,
             width: `${columnWidth}px`,
+            ...(isGutterExist(gutterWidth) && {boxShadow: `1px 0 0 ${gutterColor}`})
         }
+    }
 
-        return (
-            <React.Fragment> 
-                <Gutter color={gutterColor} width={gutterWidth} opacity={opacity}/>  
-                <div style={style} className={css.Column}>{number}</div>
-                <Gutter color={gutterColor} width={gutterWidth} opacity={opacity}/>
-            </React.Fragment>
-        )
+    render() {
+        const { number } = this.props.settings;
+        return <div style={this.getStyle()} className={css.Column}>{number}</div>;
     }
 }
