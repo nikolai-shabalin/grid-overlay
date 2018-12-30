@@ -39,7 +39,7 @@ export default class App extends React.Component {
         <Popup settings={settings} />
 
         {ReactDOM.createPortal(
-          <Grid columnNumber={this.state.columnNumber}/>,
+          <Grid settings={settings}/>,
           gridNode,
         )}
       </div>
