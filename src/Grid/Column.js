@@ -4,7 +4,7 @@ import css from './Column.module.css';
 
 export default class Column extends React.Component {
     getStyle() {
-        const { columnColor, columnWidth, opacity, gutterColor, gutterWidth } = this.props.settings;
+        const { columnColor, columnWidth, opacity, gutterColor, gutterWidth } = this.props;
 
         return {
             backgroundColor: `rgba(${hexToRgb(columnColor)}, ${opacity})`,
@@ -14,7 +14,7 @@ export default class Column extends React.Component {
     }
 
     render() {
-        const { number } = this.props.settings;
+        const { number } = this.props;
         return <div style={this.getStyle()} className={css.Column}>{number}</div>;
     }
 }

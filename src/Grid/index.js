@@ -7,9 +7,9 @@ import css from './Grid.module.css';
 export default class Grid extends React.Component {
 
   getWidth() {
-    const {columnNumber, columnWidth, gutterWidth} = this.props.settings;
+    const {columnNumber, columnWidth, gutterWidth} = this.props;
 
-    if (this.props.settings.fluid) {
+    if (this.props.fluid) {
       return null;
     } else {
       return `${(parseInt(columnWidth, 10) + parseInt(gutterWidth, 10)) * parseInt(columnNumber, 10)}px`;
@@ -17,7 +17,7 @@ export default class Grid extends React.Component {
   }
 
   getStyle() {
-    const {gutterWidth, gutterColor} = this.props.settings;
+    const {gutterWidth, gutterColor} = this.props;
 
     return {
       width: this.getWidth,
@@ -26,7 +26,7 @@ export default class Grid extends React.Component {
   }
 
   generateColumns() {
-    const {columnNumber} = this.props.settings;
+    const {columnNumber} = this.props;
     const columns = [];
 
     for(let i=1; i<=columnNumber; i++) {
@@ -37,17 +37,16 @@ export default class Grid extends React.Component {
   }
 
   createColumns(i) {
-    const {gutterWidth} = this.props.settings;
+    const {gutterWidth} = this.props;
+    const settings = {...this.props, number: i}
 
-
-    console.log(gutterWidth)
     return isGutterExist(gutterWidth) ? (
-      <Column key={i} number={i} settings={{...this.props.settings, number: i}} />
+      <Column key={i} number={i} {...settings} />
     ) :
       <React.Fragment key={i}>
-        <Gutter settings={this.props.settings} />
-        <Column number={i} settings={{...this.props.settings, number: i}} />
-        <Gutter settings={this.props.settings} />
+        <Gutter {...this.props} />
+        <Column number={i} {...settings} />
+        <Gutter {...this.props} />
       </React.Fragment> 
   }
 

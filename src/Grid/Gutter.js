@@ -3,7 +3,7 @@ import {hexToRgb} from '../utils';
 
 export default class Gutters extends React.Component {
     getStyle() {
-        const { gutterColor, gutterWidth, opacity } = this.props.settings;        
+        const { gutterColor, gutterWidth, opacity } = this.props;        
         
         return ({
             backgroundColor: `rgba(${hexToRgb(gutterColor)}, ${opacity})`,

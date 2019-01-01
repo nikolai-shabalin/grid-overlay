@@ -36,10 +36,10 @@ export default class App extends React.Component {
 
     return (
       <div>
-        <Popup settings={settings} />
+        <Popup {...settings} />
 
         {ReactDOM.createPortal(
-          <Grid settings={settings}/>,
+          <Grid {...settings}/>,
           gridNode,
         )}
       </div>

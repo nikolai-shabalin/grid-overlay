@@ -28,7 +28,7 @@ export default class Popup extends React.Component {
         <button className={css.minimize} onClick={this.handleMinimize}>-</button>
         <button className={css.close} onClick={this.handleClose}>✕</button>
 
-        {isMinimize ? null : <Content settings={{...this.props.settings}} />}
+        {isMinimize ? null : <Content {...this.props} />}
       </div>
     )
   }

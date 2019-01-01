@@ -15,7 +15,7 @@ export default class Content extends React.Component {
       gutterColor,
       maxWidth,
       onChange,
-      onChangeColor} = this.props.settings;
+      onChangeColor} = this.props;
 
     return (
       <div className={css.content}>
