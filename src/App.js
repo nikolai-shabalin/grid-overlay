@@ -26,7 +26,6 @@ export default class App extends React.Component {
           [event.target.id]: event.target.checked
       });
     } else if (event.target.type === 'select-one') {
-      // console.log(presets[event.target.value]);
         this.setState({...this.state, ...presets[event.target.value]})
     } else {
       this.setState({
@@ -44,8 +43,7 @@ export default class App extends React.Component {
   render() {
     const {gridNode} = this.props;
     const settings = {...this.state, onChange: this.handleChange, onChangeColor: this.handleChangeColor};
-
-    console.log(this.state.preset)
+    
     return (
       <div>
         <Popup {...settings} />
