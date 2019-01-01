@@ -10,8 +10,8 @@
     grid-template-columns: repeat(3, 80px) 1px 90px;
     grid-template-rows: repeat(2, 1fr);
     grid-template-areas:
-            ". . . line fluid"
-            ". . . line maxwidth";
+            ". . . line fluid preset"
+            ". . . line maxwidth .";
 
     grid-gap: 24px;
 }
@@ -29,6 +29,10 @@
     background-color: #292b30;
 }
 
+.preset {
+    grid-area: preset;
+}
+
 .label {
     user-select: none;
     color: #292b30;
@@ -38,4 +42,5 @@
     line-height: 16px;
     margin-bottom: 13px;
     cursor: pointer;
+    display: block;
 }

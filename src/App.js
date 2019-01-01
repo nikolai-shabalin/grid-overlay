@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Popup from './Popup';
 import Grid from './Grid';
+import presets from './presets';
 
 export default class App extends React.Component {
   state = {
@@ -16,6 +17,7 @@ export default class App extends React.Component {
 
     fluid: false,
     maxWidth: 0,
+    preset: '960'
   };
 
   handleChange = event => {
@@ -23,6 +25,9 @@ export default class App extends React.Component {
       this.setState({
           [event.target.id]: event.target.checked
       });
+    } else if (event.target.type === 'select-one') {
+      // console.log(presets[event.target.value]);
+        this.setState({...this.state, ...presets[event.target.value]})
     } else {
       this.setState({
         [event.target.id] : event.target.value
@@ -39,6 +44,8 @@ export default class App extends React.Component {
   render() {
     const {gridNode} = this.props;
     const settings = {...this.state, onChange: this.handleChange, onChangeColor: this.handleChangeColor};
+
+    console.log(this.state.preset)
     return (
       <div>
         <Popup {...settings} />

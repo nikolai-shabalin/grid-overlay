@@ -55,6 +55,14 @@ export default class Content extends React.Component {
           <label htmlFor="maxWidth" className={css.label}>Макс. ширина</label>
           <InputNumber id={"maxWidth"} value={maxWidth} step={10} onChange={onChange}/>
         </div>
+
+        <div className={css.preset}>
+          <label htmlFor="mapreset" className={css.label}>Пресеты</label>
+          <select id="preset" onChange={onChange}>
+            <option value="960">960</option>
+            <option value="kelnik">Кельник</option>
+          </select>  
+        </div>
       </div>
     )
   }
