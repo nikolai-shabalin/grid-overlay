@@ -24,5 +24,20 @@ export default {
     
         fluid: true,
         maxWidth: 1440,
-      }
+    },
+    '8px': {
+        columnNumber: 0,
+        columnWidth: 8,
+        columnColor: '#FF00E9',
+    
+        gutterWidth: 0,
+        gutterColor: '#663399',
+    
+        opacity: 0.3,
+    
+        fluid: true,
+        maxWidth: 0,
+        verticalRhythm: true,
+        verticalRhythmNumber: 8,
+    }
 }

@@ -7,11 +7,11 @@
     padding: 25px 35px;
 
     display: grid;
-    grid-template-columns: repeat(3, 80px) 1px 90px;
+    grid-template-columns: repeat(3, 80px) 1px repeat(2, 90px);
     grid-template-rows: repeat(2, 1fr);
     grid-template-areas:
             ". . . line fluid preset"
-            ". . . line maxwidth .";
+            ". . . line maxwidth verticalRhythm";
 
     grid-gap: 24px;
 }
@@ -43,4 +43,8 @@
     margin-bottom: 13px;
     cursor: pointer;
     display: block;
+}
+
+.vertical-rhythm {
+    grid-area: verticalRhythm;
 }

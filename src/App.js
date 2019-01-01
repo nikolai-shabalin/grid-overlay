@@ -17,7 +17,10 @@ export default class App extends React.Component {
 
     fluid: false,
     maxWidth: 0,
-    preset: '960'
+    preset: '960',
+
+    verticalRhythm: true,
+    verticalRhythmNumber: 24,
   };
 
   handleChange = event => {
@@ -43,16 +46,16 @@ export default class App extends React.Component {
   render() {
     const {gridNode} = this.props;
     const settings = {...this.state, onChange: this.handleChange, onChangeColor: this.handleChangeColor};
-    
+
     return (
-      <div>
+      <React.Fragment>
         <Popup {...settings} />
 
         {ReactDOM.createPortal(
           <Grid {...settings}/>,
           gridNode,
         )}
-      </div>
+      </React.Fragment>
     )
   }
 }

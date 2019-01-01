@@ -3,6 +3,8 @@ import css from "./content.module.css";
 import InputNumber from '../Inputs/Number';
 import InputColor from '../Inputs/Color';
 import InputCheckbox from '../Inputs/Checkbox';
+import Select from '../Inputs/Select';
+import presets from '../../presets';
 
 export default class Content extends React.Component {
   render() {
@@ -14,8 +16,10 @@ export default class Content extends React.Component {
       columnColor,
       gutterColor,
       maxWidth,
-      onChange,
       fluid,
+      verticalRhythm,
+      verticalRhythmNumber,
+      onChange,
       onChangeColor} = this.props;
 
     return (
@@ -57,11 +61,14 @@ export default class Content extends React.Component {
         </div>
 
         <div className={css.preset}>
-          <label htmlFor="mapreset" className={css.label}>Пресеты</label>
-          <select id="preset" onChange={onChange}>
-            <option value="960">960</option>
-            <option value="kelnik">Кельник</option>
-          </select>  
+          <label htmlFor="presets" className={css.label}>Пресеты</label>
+          <Select id={"presets"} onChange={onChange} options={presets} />
+        </div>
+
+        <div className={css.verticalRhythm}>
+          <InputCheckbox id={"verticalRhythm"} onChange={onChange} checked={verticalRhythm} />
+          <label htmlFor="verticalRhythm" className={css.label}>Верт.ритм</label> 
+          <InputNumber id={"verticalRhythmNumber"} value={verticalRhythmNumber} step={1} onChange={onChange}/>
         </div>
       </div>
     )
