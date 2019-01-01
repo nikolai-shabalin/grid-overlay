@@ -4,8 +4,7 @@ import css from './Number.module.css'
 export default class InputNumber extends React.Component {
   render() {
     const {id, value, step, max, onChange, disabled} = this.props;
-
-    console.log(disabled)
+    
     return (
       <input
         id={ id }

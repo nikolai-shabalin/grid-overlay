@@ -7,10 +7,10 @@ import css from './Grid.module.css';
 export default class Grid extends React.Component {
 
   getWidth() {
-    const {columnNumber, columnWidth, gutterWidth} = this.props;
+    const {columnNumber, columnWidth, gutterWidth, fluid, maxWidth} = this.props;
 
-    if (this.props.fluid) {
-      return null;
+    if (fluid) {
+      return maxWidth === 0 ? null : `${maxWidth}px`;
     } else {
       return `${(parseInt(columnWidth, 10) + parseInt(gutterWidth, 10)) * parseInt(columnNumber, 10)}px`;
     }    
@@ -20,7 +20,7 @@ export default class Grid extends React.Component {
     const {gutterWidth, gutterColor} = this.props;
 
     return {
-      width: this.getWidth,
+      maxWidth:  this.getWidth(),
       ...(isGutterExist(gutterWidth) && {boxShadow: `-1px 0 0 ${gutterColor}`})
     }
   }

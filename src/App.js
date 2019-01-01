@@ -39,7 +39,6 @@ export default class App extends React.Component {
   render() {
     const {gridNode} = this.props;
     const settings = {...this.state, onChange: this.handleChange, onChangeColor: this.handleChangeColor};
-
     return (
       <div>
         <Popup {...settings} />
