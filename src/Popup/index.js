@@ -4,7 +4,6 @@ import Content from './Content';
 
 export default class Popup extends React.Component {
   state = {
-    isClose: false,
     isMinimize: false,
   };
 
@@ -14,19 +13,14 @@ export default class Popup extends React.Component {
     })
   };
 
-  handleClose = () => {
-    this.setState({
-      isClose: true,
-    });
-  };
-
   render() {
-    const { isClose, isMinimize } = this.state;
+    const { isMinimize } = this.state;
+    const {onClose} = this.props;
 
-    return isClose ? null : (
+    return (
       <div className={css.Popup}>
         <button className={css.minimize} onClick={this.handleMinimize}>-</button>
-        <button className={css.close} onClick={this.handleClose}>✕</button>
+        <button className={css.close} onClick={onClose}>✕</button>
 
         {isMinimize ? null : <Content {...this.props} />}
       </div>

@@ -19,9 +19,17 @@ export default class App extends React.Component {
     maxWidth: 0,
     preset: '960',
 
-    verticalRhythm: true,
+    verticalRhythm: false,
     verticalRhythmNumber: 24,
+
+    isShow: true,
   };
+
+  handleClose = () => {
+    this.setState({
+      isShow: false
+    });
+  }
 
   handleChange = event => {
     if (event.target.type === 'checkbox') {
@@ -45,9 +53,14 @@ export default class App extends React.Component {
 
   render() {
     const {gridNode} = this.props;
-    const settings = {...this.state, onChange: this.handleChange, onChangeColor: this.handleChangeColor};
+    const settings = {
+      ...this.state, 
+      onChange: this.handleChange, 
+      onChangeColor: this.handleChangeColor, 
+      onClose: this.handleClose};
+    const {isShow} = this.state;
 
-    return (
+    return isShow ? 
       <React.Fragment>
         <Popup {...settings} />
 
@@ -56,6 +69,6 @@ export default class App extends React.Component {
           gridNode,
         )}
       </React.Fragment>
-    )
+    : null;
   }
 }
