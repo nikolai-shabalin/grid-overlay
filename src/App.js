@@ -19,9 +19,15 @@ export default class App extends React.Component {
   };
 
   handleChange = event => {
-    this.setState({
-      [event.target.id] : event.target.value
-    });
+    if (event.target.type === 'checkbox') {
+      this.setState({
+          [event.target.id]: event.target.checked
+      });
+    } else {
+      this.setState({
+        [event.target.id] : event.target.value
+      });
+    }
   };
 
   handleChangeColor = (id, color) => {

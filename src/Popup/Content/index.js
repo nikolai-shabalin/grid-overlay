@@ -15,6 +15,7 @@ export default class Content extends React.Component {
       gutterColor,
       maxWidth,
       onChange,
+      fluid,
       onChangeColor} = this.props;
 
     return (
@@ -25,7 +26,7 @@ export default class Content extends React.Component {
         </div>
         <div className={css.cell}>
           <label htmlFor="columnWidth" className={css.label}>Ширина колонки</label>
-          <InputNumber id={"columnWidth"} value={columnWidth} onChange={onChange}/>
+          <InputNumber id={"columnWidth"} value={columnWidth} onChange={onChange} disabled={this.props.fluid}/>
         </div>
         <div className={css.cell}>
           <label htmlFor="gutterWidth" className={css.label}>Ширина гаттеров</label>
@@ -47,7 +48,7 @@ export default class Content extends React.Component {
         <div className={css.line}/>
 
         <div className={css.fluid}>
-          <InputCheckbox id={"fluid"}/>
+          <InputCheckbox id={"fluid"} onChange={onChange} checked={fluid} />
           <label htmlFor="fluid" className={css.label}>Резиновый</label>
         </div>
         <div className={css.maxWidth}>

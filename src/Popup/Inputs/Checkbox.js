@@ -2,19 +2,8 @@ import React from 'react';
 import css from './Checkbox.module.css';
 
 export default class InputCheckbox extends React.Component{
-  state = {
-    isChecked: false,
-  };
-
-  handleClick = () => {
-    this.setState({
-      isChecked: !this.state.isChecked,
-    });
-  };
-
   render() {
-    const {id, onChange} = this.props;
-    const {isChecked} = this.state;
+    const {id, onChange, checked} = this.props;   
     return (
       <div className={css.wrapper}>
         <input
@@ -22,9 +11,9 @@ export default class InputCheckbox extends React.Component{
           type="checkbox"
           className={css.checkbox}
           onChange={onChange}
-          checked={isChecked}
+          checked={checked}
         />
-        <div className={css.label} onClick={this.handleClick} />
+        <div className={css.label} />
       </div>
     );
   }
