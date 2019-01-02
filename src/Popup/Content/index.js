@@ -68,7 +68,12 @@ export default class Content extends React.Component {
         <div className={css.verticalRhythm}>
           <InputCheckbox id={"verticalRhythm"} onChange={onChange} checked={verticalRhythm} />
           <label htmlFor="verticalRhythm" className={css.label}>Верт.ритм</label> 
-          <InputNumber id={"verticalRhythmNumber"} value={verticalRhythmNumber} step={1} onChange={onChange}/>
+
+          {
+            verticalRhythm && 
+            <InputNumber id={"verticalRhythmNumber"} value={verticalRhythmNumber} step={1} onChange={onChange}/>
+          }
+          
         </div>
       </div>
     )

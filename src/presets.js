@@ -11,6 +11,8 @@ export default {
     
         fluid: false,
         maxWidth: 0,
+
+        verticalRhythm: false,
     },
     kelnik: {
         columnNumber: 36,
@@ -24,6 +26,8 @@ export default {
     
         fluid: true,
         maxWidth: 1440,
+
+        verticalRhythm: false,
     },
     '8px': {
         columnNumber: 0,
