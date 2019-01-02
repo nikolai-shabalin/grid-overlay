@@ -23,6 +23,10 @@ export default class App extends React.Component {
     verticalRhythmNumber: 24,
 
     isShow: true,
+
+    language: 'ru',
+
+    isShowSettings: false,
   };
 
   handleClose = () => {
@@ -45,6 +49,13 @@ export default class App extends React.Component {
     }
   };
 
+  handleChangeLanguage = event => {
+    this.setState({
+      [event.target.id] : event.target.value,
+      isShowSettings: !this.state.isShowSettings,
+    });
+  }
+
   handleChangeColor = (id, color) => {
     this.setState({
       [id] : color
@@ -57,7 +68,9 @@ export default class App extends React.Component {
       ...this.state, 
       onChange: this.handleChange, 
       onChangeColor: this.handleChangeColor, 
-      onClose: this.handleClose};
+      onClose: this.handleClose,
+      onChangeLanguage: this.handleChangeLanguage
+    };
     const {isShow} = this.state;
 
     return isShow ? 

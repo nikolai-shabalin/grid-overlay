@@ -6,6 +6,7 @@ export default class Select extends React.Component {
         
         return (
             <select id={id} name={id} onChange={onChange}>
+            <option key={'empty'} value={''}></option>
                 {Object.keys(options).map(optionName => 
                     <option key={optionName} value={optionName}>{optionName}</option>)
                 }

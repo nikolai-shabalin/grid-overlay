@@ -10,7 +10,8 @@
 }
 
 .minimize,
-.close {
+.close,
+.settings {
     border: none;
     background-color: transparent;
     position: absolute;
@@ -24,4 +25,14 @@
 
 .close {
     right: 5px;
+}
+
+.settings {
+    right: 37px;
+    top: 8px;
+}
+
+.settingsIcon {
+    width: 13px;
+    height: 13px;
 }
