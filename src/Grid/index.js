@@ -8,9 +8,9 @@ export default class Grid extends React.Component {
 
   getMaxWidth() {
     const {columnNumber, columnWidth, gutterWidth, fluid, maxWidth} = this.props;
-
+    
     if (fluid) {
-      return maxWidth === 0 ? null : `${maxWidth}px`;
+      return parseInt(maxWidth, 10) === 0 ? null : `${maxWidth}px`;
     } else {
       return `${(parseInt(columnWidth, 10) + parseInt(gutterWidth, 10)) * parseInt(columnNumber, 10)}px`;
     }    
