@@ -34,8 +34,8 @@ export default {
         opacity: 'Opacità',
         fluid: 'Fluido',
         maxWidth: 'Larghezza max',
-        presets: 'Presets',
+        presets: 'Preset',
         verticalRhythm: 'Ritmo verticale',
-        changeLanguage: 'Scegli la lingua',
+        changeLanguage: 'Scegli Lingua',
     }
 }
