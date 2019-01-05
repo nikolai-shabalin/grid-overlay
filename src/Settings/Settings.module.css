@@ -1,3 +1,6 @@
 .Settings {
     padding: 25px 35px;
+    background-color: #fff;
+    box-shadow: -5px 2px 21px 0 rgba(0,0,0,0.3);
+    border-radius: 4px;
 }
