@@ -1,12 +1,12 @@
 .Grid {
-    margin: 0 auto;
-    display: flex;
-    flex-flow: row nowrap;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    pointer-events: none;
-    width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row nowrap;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  width: 100%;
 }

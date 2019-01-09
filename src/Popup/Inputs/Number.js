@@ -34,8 +34,8 @@ export default class InputNumber extends React.Component {
         step={ step }
         min="0"
         max={ max }
-        className={css.Number}
-        disabled={disabled}
+        className={ css.Number }
+        disabled={ disabled }
         onChange={ onChange }
         onWheel={ onChange }
         // onMouseDown={this.handleMouseDown}
@@ -50,6 +50,6 @@ InputNumber.defaultProps = {
   step: 1,
   max: null,
   disabled: false,
-  onChange: () => {},
-  onWheel: () => {},
+  onChange: () => {
+  },
 };

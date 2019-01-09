@@ -1,19 +1,19 @@
 import React from 'react';
 import css from './Checkbox.module.css';
 
-export default class InputCheckbox extends React.Component{
+export default class InputCheckbox extends React.Component {
   render() {
-    const {id, onChange, checked} = this.props;   
+    const {id, onChange, checked} = this.props;
     return (
-      <div className={css.wrapper}>
+      <div className={ css.wrapper }>
         <input
-          id={id}
+          id={ id }
           type="checkbox"
-          className={css.checkbox}
-          onChange={onChange}
-          checked={checked}
+          className={ css.checkbox }
+          onChange={ onChange }
+          checked={ checked }
         />
-        <div className={css.label} />
+        <div className={ css.label }/>
       </div>
     );
   }
@@ -21,5 +21,6 @@ export default class InputCheckbox extends React.Component{
 
 InputCheckbox.defaultProps = {
   id: '',
-  onChange: () => {},
+  onChange: () => {
+  },
 };

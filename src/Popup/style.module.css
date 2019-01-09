@@ -1,38 +1,36 @@
 .Popup {
-    box-shadow: -5px 2px 21px 0 rgba(0,0,0,0.3);
-
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 9999;
-
-    border-radius: 4px;
+  box-shadow: -5px 2px 21px 0 rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 9999;
+  border-radius: 4px;
 }
 
 .minimize,
 .close,
 .settings {
-    border: none;
-    background-color: transparent;
-    position: absolute;
-    top: 5px;
-    cursor: pointer;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 5px;
+  cursor: pointer;
 }
 
 .minimize {
-    right: 25px;
+  right: 25px;
 }
 
 .close {
-    right: 5px;
+  right: 5px;
 }
 
 .settings {
-    right: 37px;
-    top: 8px;
+  right: 37px;
+  top: 8px;
 }
 
 .settingsIcon {
-    width: 13px;
-    height: 13px;
+  width: 13px;
+  height: 13px;
 }

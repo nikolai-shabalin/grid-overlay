@@ -1,24 +1,24 @@
 .popover {
-    position: absolute;
-    z-index: 2;
+  position: absolute;
+  z-index: 2;
 }
 
 .cover {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .button {
-    width: 24px;
-    height: 25px;
-    border-radius: 50%;
-    border: none;
-    outline: none
+  width: 24px;
+  height: 25px;
+  border-radius: 50%;
+  border: none;
+  outline: none
 }
 
 .button:focus {
-    outline: 1px solid -webkit-focus-ring-color;
+  outline: 1px solid -webkit-focus-ring-color;
 }
