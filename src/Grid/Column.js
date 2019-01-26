@@ -1,5 +1,5 @@
 import React from 'react';
-import { hexToRgb, isGutterExist } from '../utils';
+import {hexToRgb, isGutterExist} from '../utils';
 import css from './Column.module.css';
 
 export default class Column extends React.Component {
@@ -8,21 +8,21 @@ export default class Column extends React.Component {
 
     if (fluid) {
       return {
-        backgroundColor: `rgba(${ hexToRgb(columnColor) }, ${ opacity })`,
+        backgroundColor: `rgba(${hexToRgb(columnColor)}, ${opacity})`,
         flex: '1 0 auto',
-        ...(isGutterExist(gutterWidth) && {boxShadow: `1px 0 0 ${ gutterColor }`})
+        ...(isGutterExist(gutterWidth) && {boxShadow: `1px 0 0 ${gutterColor}`})
       }
     } else {
       return {
-        backgroundColor: `rgba(${ hexToRgb(columnColor) }, ${ opacity })`,
-        width: `${ columnWidth }px`,
-        ...(isGutterExist(gutterWidth) && {boxShadow: `1px 0 0 ${ gutterColor }`})
+        backgroundColor: `rgba(${hexToRgb(columnColor)}, ${opacity})`,
+        width: `${columnWidth}px`,
+        ...(isGutterExist(gutterWidth) && {boxShadow: `1px 0 0 ${gutterColor}`})
       }
     }
   }
 
   render() {
     const {number} = this.props;
-    return <div style={ this.getStyle() } className={ css.Column }>{ number }</div>;
+    return <div style={this.getStyle()} className={css.Column}>{number}</div>;
   }
 }

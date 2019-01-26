@@ -1,7 +1,7 @@
 import React from 'react';
 import Column from './Column';
 import Gutter from './Gutter';
-import { isGutterExist } from '../utils';
+import {isGutterExist} from '../utils';
 import css from './Grid.module.css';
 
 export default class Grid extends React.Component {
@@ -10,9 +10,9 @@ export default class Grid extends React.Component {
     const {columnNumber, columnWidth, gutterWidth, fluid, maxWidth} = this.props;
 
     if (fluid) {
-      return parseInt(maxWidth, 10) === 0 ? null : `${ maxWidth }px`;
+      return parseInt(maxWidth, 10) === 0 ? null : `${maxWidth}px`;
     } else {
-      return `${ (parseInt(columnWidth, 10) + parseInt(gutterWidth, 10)) * parseInt(columnNumber, 10) }px`;
+      return `${(parseInt(columnWidth, 10) + parseInt(gutterWidth, 10)) * parseInt(columnNumber, 10)}px`;
     }
   }
 
@@ -21,7 +21,7 @@ export default class Grid extends React.Component {
 
     return {
       maxWidth: this.getMaxWidth(),
-      ...(isGutterExist(gutterWidth) && {boxShadow: `-1px 0 0 ${ gutterColor }`}),
+      ...(isGutterExist(gutterWidth) && {boxShadow: `-1px 0 0 ${gutterColor}`}),
       ...(verticalRhythm && this.createVerticalRhythm(gutterColor, verticalRhythmNumber))
     }
   }
@@ -44,9 +44,9 @@ export default class Grid extends React.Component {
       background: `repeating-linear-gradient( 
         180deg,
         #fff,
-        #fff ${ number - 1 }px,
-        ${ color } ${ number - 1 }px,
-        ${ color } ${ number }px`
+        #fff ${number - 1}px,
+        ${color} ${number - 1}px,
+        ${color} ${number}px`
     })
   }
 
@@ -55,16 +55,16 @@ export default class Grid extends React.Component {
     const settings = {...this.props, number: i};
 
     return isGutterExist(gutterWidth) ? (
-        <Column key={ i } number={ i } { ...settings } />
+        <Column key={i} number={i} {...settings} />
       ) :
-      <React.Fragment key={ i }>
-        <Gutter { ...this.props } />
-        <Column number={ i } { ...settings } />
-        <Gutter { ...this.props } />
+      <React.Fragment key={i}>
+        <Gutter {...this.props} />
+        <Column number={i} {...settings} />
+        <Gutter {...this.props} />
       </React.Fragment>
   }
 
-  createGrid = () => <div className={ css.Grid } style={ this.getStyle() }>{ this.generateColumns() }</div>;
+  createGrid = () => <div className={css.Grid} style={this.getStyle()}>{this.generateColumns()}</div>;
 
   render = () => this.createGrid();
 }

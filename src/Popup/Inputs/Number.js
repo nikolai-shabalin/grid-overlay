@@ -28,16 +28,16 @@ export default class InputNumber extends React.Component {
 
     return (
       <input
-        id={ id }
+        id={id}
         type="number"
-        value={ value }
-        step={ step }
+        value={value}
+        step={step}
         min="0"
-        max={ max }
-        className={ css.Number }
-        disabled={ disabled }
-        onChange={ onChange }
-        onWheel={ onChange }
+        max={max}
+        className={css.Number}
+        disabled={disabled}
+        onChange={onChange}
+        onWheel={onChange}
         // onMouseDown={this.handleMouseDown}
       />
     )

@@ -5,15 +5,15 @@ export default class InputCheckbox extends React.Component {
   render() {
     const {id, onChange, checked} = this.props;
     return (
-      <div className={ css.wrapper }>
+      <div className={css.wrapper}>
         <input
-          id={ id }
+          id={id}
           type="checkbox"
-          className={ css.checkbox }
-          onChange={ onChange }
-          checked={ checked }
+          className={css.checkbox}
+          onChange={onChange}
+          checked={checked}
         />
-        <div className={ css.label }/>
+        <div className={css.label}/>
       </div>
     );
   }

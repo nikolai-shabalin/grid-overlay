@@ -65,12 +65,12 @@ export default class App extends React.Component {
 
     return isShow &&
       <React.Fragment>
-        <Popup { ...settings } />
+        <Popup {...settings} />
 
-        { ReactDOM.createPortal(
-          <Grid { ...settings }/>,
+        {ReactDOM.createPortal(
+          <Grid {...settings}/>,
           gridNode,
-        ) }
+        )}
       </React.Fragment>;
   }
 }

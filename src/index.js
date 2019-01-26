@@ -15,4 +15,4 @@ app.append(popup);
 app.append(grid);
 body.append(app);
 
-ReactDOM.render(<App gridNode={ grid }/>, popup);
+ReactDOM.render(<App gridNode={grid}/>, popup);
