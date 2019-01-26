@@ -29,23 +29,15 @@ export default class App extends React.Component {
     isShowSettings: false,
   };
 
-  handleClose = () => {
-    this.setState({
-      isShow: false
-    });
-  };
+  handleClose = () => this.setState({isShow: false});
 
   handleChange = event => {
     if (event.target.type === 'checkbox') {
-      this.setState({
-        [event.target.id]: event.target.checked
-      });
-    } else if (event.target.type === 'select-one') {
+      this.setState({[event.target.id]: event.target.checked});
+    } else if (event.target.name === 'presets') {
       this.setState({...this.state, ...presets[event.target.value]})
     } else {
-      this.setState({
-        [event.target.id]: event.target.value
-      });
+      this.setState({[event.target.id]: event.target.value});
     }
   };
 
@@ -57,13 +49,12 @@ export default class App extends React.Component {
   };
 
   handleChangeColor = (id, color) => {
-    this.setState({
-      [id]: color
-    });
+    this.setState({[id]: color});
   };
 
   render() {
     const {gridNode} = this.props;
+    const {isShow} = this.state;
     const settings = {
       ...this.state,
       onChange: this.handleChange,
@@ -71,9 +62,8 @@ export default class App extends React.Component {
       onClose: this.handleClose,
       onChangeLanguage: this.handleChangeLanguage
     };
-    const {isShow} = this.state;
 
-    return isShow ?
+    return isShow &&
       <React.Fragment>
         <Popup { ...settings } />
 
@@ -81,7 +71,6 @@ export default class App extends React.Component {
           <Grid { ...settings }/>,
           gridNode,
         ) }
-      </React.Fragment>
-      : null;
+      </React.Fragment>;
   }
 }
