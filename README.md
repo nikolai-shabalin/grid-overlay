@@ -1,7 +1,7 @@
 # Grid overlay
 Накладывает сетку на сайт для тестирования верстки.
 
-Grid overlay это расширения для google chrome.
+Grid overlay это расширения для google chrome. [Ссылка для скачивания](https://chrome.google.com/webstore/detail/grid-overlay/obbmolmignklgjleehhcilnllicpbcdj?hl=en-US)
 
 
 ## Преимущества
