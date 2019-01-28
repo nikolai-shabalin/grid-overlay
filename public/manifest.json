@@ -1,15 +1,22 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "manifest_version": 2,
+  "name": "Grid Overlay",
+  "version": "1.0.9",
+  "description": "Show grid over site",
+  "browser_action": {
+    "default_icon": {
+      "16": "icons/icon-16.png"
+    },
+    "default_title": "Show Grid Overlay"
+  },
+  "author": "Nikolai Shabalin <dev.nikolai.shabalin@gmail.com>, Anastasia Grabovaia <A.grabovaia@gmail.com>",
+  "content_scripts" : [{
+    "js": ["./static/js/content.js"],
+    "css": ["./static/css/content.css"],
+    "matches" : ["http://*/*", "https://*/*"]
+  }],
+  "permissions": [
+    "activeTab",
+    "storage"
+  ]
 }
