@@ -22,7 +22,8 @@ export default class Content extends React.Component {
       verticalRhythmNumber,
       language,
       onChange,
-      onChangeColor
+      onChangeColor,
+      onClick
     } = this.props;
 
     return (
@@ -55,7 +56,7 @@ export default class Content extends React.Component {
         <div className={css.line}/>
 
         <div className={css.fluid}>
-          <InputCheckbox id={"fluid"} onChange={onChange} checked={fluid}/>
+          <InputCheckbox id={"fluid"} onChange={onChange} checked={fluid} onClick={onClick}/>
           <label htmlFor="fluid" className={css.label}>{dictionary[language].fluid}</label>
         </div>
         <div className={css.maxWidth}>
@@ -69,7 +70,7 @@ export default class Content extends React.Component {
         </div>
 
         <div className={css.verticalRhythm}>
-          <InputCheckbox id={"verticalRhythm"} onChange={onChange} checked={verticalRhythm}/>
+          <InputCheckbox id={"verticalRhythm"} onChange={onChange} checked={verticalRhythm} onClick={onClick}/>
           <label htmlFor="verticalRhythm" className={css.label}>{dictionary[language].verticalRhythm}</label>
 
           {

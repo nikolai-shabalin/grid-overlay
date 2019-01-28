@@ -3,7 +3,7 @@ import css from './Checkbox.module.css';
 
 export default class InputCheckbox extends React.Component {
   render() {
-    const {id, onChange, checked} = this.props;
+    const {id, onChange, onClick, checked} = this.props;
     return (
       <div className={css.wrapper}>
         <input
@@ -13,7 +13,7 @@ export default class InputCheckbox extends React.Component {
           onChange={onChange}
           checked={checked}
         />
-        <div className={css.label}/>
+        <div className={css.label} onClick={() => {onClick(id)}}/>
       </div>
     );
   }

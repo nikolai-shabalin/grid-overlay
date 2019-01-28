@@ -41,6 +41,8 @@ export default class App extends React.Component {
     }
   };
 
+  handleChangeInputsFromDiv = prop => this.setState(prevState => ({[prop]: !prevState[prop]}));
+
   handleChangeLanguage = event => {
     this.setState({
       [event.target.id]: event.target.value,
@@ -60,7 +62,8 @@ export default class App extends React.Component {
       onChange: this.handleChange,
       onChangeColor: this.handleChangeColor,
       onClose: this.handleClose,
-      onChangeLanguage: this.handleChangeLanguage
+      onChangeLanguage: this.handleChangeLanguage,
+      onClick: this.handleChangeInputsFromDiv,
     };
 
     return isShow &&
