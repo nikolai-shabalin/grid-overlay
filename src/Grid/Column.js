@@ -22,13 +22,17 @@ export default class Column extends React.Component {
     }
   }
 
+  isShowNumber = () => this.props.columnWidth > 20;
+
   render() {
     const {number, gutterWidth} = this.props;
 
     return (
       <React.Fragment>
         {isGutterShow(gutterWidth) && <Gutter {...this.props} />}
-        <div style={this.getStyle()} className={css.Column}>{number}</div>
+        <div style={this.getStyle()} className={css.Column}>
+          {this.isShowNumber() && number}
+        </div>
         {isGutterShow(gutterWidth) && <Gutter {...this.props} />}
       </React.Fragment>
     );

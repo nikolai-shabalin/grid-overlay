@@ -39,7 +39,7 @@ export default {
 
     opacity: 0.3,
 
-    fluid: true,
+    fluid: false,
     maxWidth: 0,
     verticalRhythm: true,
     verticalRhythmNumber: 8,
