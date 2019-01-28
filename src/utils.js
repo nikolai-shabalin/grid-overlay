@@ -3,6 +3,6 @@ export const hexToRgb = hex => {
   return result ? `${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)}` : null;
 };
 
-export const isGutterExist = gutterWidth => {
-  return parseInt(gutterWidth, 10) === 0;
+export const isGutterShow = gutterWidth => {
+  return parseInt(gutterWidth, 10) !== 0;
 };

@@ -1,7 +1,6 @@
 import React from 'react';
 import Column from './Column';
-import Gutter from './Gutter';
-import {isGutterExist} from '../utils';
+import {isGutterShow} from '../utils';
 import css from './Grid.module.css';
 
 export default class Grid extends React.Component {
@@ -21,7 +20,7 @@ export default class Grid extends React.Component {
 
     return {
       maxWidth: this.getMaxWidth(),
-      ...(isGutterExist(gutterWidth) && {boxShadow: `-1px 0 0 ${gutterColor}`}),
+      ...(!isGutterShow(gutterWidth) && {boxShadow: `-1px 0 0 ${gutterColor}`}),
       ...(verticalRhythm && this.createVerticalRhythm(gutterColor, verticalRhythmNumber))
     }
   }
@@ -51,17 +50,9 @@ export default class Grid extends React.Component {
   }
 
   createColumns(i) {
-    const {gutterWidth} = this.props;
     const settings = {...this.props, number: i};
 
-    return isGutterExist(gutterWidth) ? (
-        <Column key={i} number={i} {...settings} />
-      ) :
-      <React.Fragment key={i}>
-        <Gutter {...this.props} />
-        <Column number={i} {...settings} />
-        <Gutter {...this.props} />
-      </React.Fragment>
+    return <Column key={i} number={i} {...settings} />;
   }
 
   createGrid = () => <div className={css.Grid} style={this.getStyle()}>{this.generateColumns()}</div>;

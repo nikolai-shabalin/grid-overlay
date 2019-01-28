@@ -12,7 +12,7 @@ export default class Popup extends React.Component {
 
   render() {
     const {isMinimize} = this.state;
-    const {onClose, isShowSettings, language, onChangeLanguage} = this.props;
+    const {isShowSettings, language, onChangeLanguage, onClose} = this.props;
 
     return (
       <div className={css.Popup}>
