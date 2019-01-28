@@ -8,7 +8,7 @@ export default class Grid extends React.Component {
   getMaxWidth() {
     const {columnNumber, columnWidth, gutterWidth, fluid, maxWidth} = this.props;
 
-    if (fluid) {
+    if (fluid || parseInt(columnNumber, 10) === 0) {
       return parseInt(maxWidth, 10) === 0 ? null : `${maxWidth}px`;
     } else {
       return `${(parseInt(columnWidth, 10) + parseInt(gutterWidth, 10)) * parseInt(columnNumber, 10)}px`;
@@ -25,11 +25,17 @@ export default class Grid extends React.Component {
     }
   }
 
+  getInfinityColumns() {
+    const {columnWidth, gutterWidth} = this.props;
+    return Math.ceil(window.outerWidth / ((parseInt(columnWidth, 10) + parseInt(gutterWidth, 10))));
+  }
+
   generateColumns() {
     const {columnNumber} = this.props;
     const columns = [];
+    const number = parseInt(columnNumber) === 0 ? this.getInfinityColumns() : columnNumber;
 
-    for (let i = 1; i <= columnNumber; i++) {
+    for (let i = 1; i <= number; i++) {
       columns.push(this.createColumns(i));
     }
 
