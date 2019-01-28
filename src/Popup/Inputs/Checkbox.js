@@ -2,6 +2,12 @@ import React from 'react';
 import css from './Checkbox.module.css';
 
 export default class InputCheckbox extends React.Component {
+  handleEnter = event => {
+    if (event.key === 'Enter') {
+      this.props.onClick(this.props.id);
+    }
+  };
+
   render() {
     const {id, onChange, onClick, checked} = this.props;
     return (
@@ -12,6 +18,7 @@ export default class InputCheckbox extends React.Component {
           className={css.checkbox}
           onChange={onChange}
           checked={checked}
+          onKeyPress={this.handleEnter}
         />
         <div className={css.label} onClick={() => {onClick(id)}}/>
       </div>
