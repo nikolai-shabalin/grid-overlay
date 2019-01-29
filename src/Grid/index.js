@@ -48,8 +48,8 @@ export default class Grid extends React.Component {
     return ({
       background: `repeating-linear-gradient( 
         180deg,
-        #fff,
-        #fff ${number - 1}px,
+        rgba(0,0,0,0),
+        rgba(0,0,0,0) ${number - 1}px,
         ${color} ${number - 1}px,
         ${color} ${number}px`
     })
