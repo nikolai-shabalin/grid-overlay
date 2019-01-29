@@ -1,6 +1,6 @@
 .Popup {
   box-shadow: -5px 2px 21px 0 rgba(0, 0, 0, 0.3);
-  position: absolute;
+  position: fixed;
   top: 10px;
   right: 10px;
   z-index: 9999;
