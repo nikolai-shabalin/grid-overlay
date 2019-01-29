@@ -16,9 +16,9 @@ export default class Popup extends React.Component {
 
     return (
       <div className={css.Popup}>
-        <button className={css.minimize} onClick={this.handleMinimize}>-</button>
-        <button className={css.close} onClick={onClose}>✕</button>
-        <button className={css.settings} onClick={onChangeLanguage}>
+        <button className={css.minimize} onClick={this.handleMinimize} title="Свернуть">-</button>
+        <button className={css.close} onClick={onClose} title="Закрыть">✕</button>
+        <button className={css.settings} onClick={onChangeLanguage} title="Настройка">
           <img className={css.settingsIcon} src="/images/settings.svg" alt='Настройка'/>
         </button>
 
