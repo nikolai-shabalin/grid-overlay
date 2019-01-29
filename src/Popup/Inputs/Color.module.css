@@ -12,13 +12,15 @@
 }
 
 .button {
-  width: 24px;
-  height: 25px;
-  border-radius: 50%;
-  border: none;
-  outline: none
+  width: 24px !important;
+  height: 25px !important;
+  border-radius: 50% !important;
+  border: none !important;
+  outline: none !important;
+  padding: 0 !important;
+  min-height: auto !important;
 }
 
 .button:focus {
-  outline: 1px solid -webkit-focus-ring-color;
+  outline: 1px solid -webkit-focus-ring-color !important;
 }

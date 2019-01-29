@@ -1,5 +1,6 @@
 import React from 'react';
 import css from './Checkbox.module.css';
+import {checkmark} from '../Icons';
 
 export default class InputCheckbox extends React.Component {
   handleEnter = event => {
@@ -20,7 +21,9 @@ export default class InputCheckbox extends React.Component {
           checked={checked}
           onKeyPress={this.handleEnter}
         />
-        <div className={css.label} onClick={() => {onClick(id)}}/>
+        <div className={css.label} onClick={() => {onClick(id)}}>
+          {checked && checkmark()}
+        </div>
       </div>
     );
   }

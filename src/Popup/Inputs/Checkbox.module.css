@@ -11,10 +11,6 @@
   margin: -1px; padding: 0; border: 0;
 }
 
-.checkbox:checked + .label:after {
-  display: block;
-}
-
 .checkbox:focus + .label {
   outline: 1px solid -webkit-focus-ring-color;
 }
@@ -28,14 +24,4 @@
   height: 16px;
   border-radius: 3px;
   background-color: #dcc7f9;
-}
-
-.label:after {
-  position: absolute;
-  width: 10px;
-  height: 8px;
-  top: -2px;
-  left: 3px;
-  content: url("/images/checkmark.png");
-  display: none;
 }

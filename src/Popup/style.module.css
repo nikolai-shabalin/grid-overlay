@@ -10,11 +10,15 @@
 .minimize,
 .close,
 .settings {
-  border: none;
-  background-color: transparent;
-  position: absolute;
-  top: 5px;
-  cursor: pointer;
+  color: black !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  border: none !important;
+  background-color: transparent !important;
+  position: absolute !important;
+  top: 5px !important;
+  cursor: pointer !important;
+  padding: 0 !important;
 }
 
 .minimize {

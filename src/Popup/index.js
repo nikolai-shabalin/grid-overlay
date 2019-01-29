@@ -2,6 +2,7 @@ import React from 'react';
 import css from './style.module.css';
 import Content from './Content';
 import Settings from './Settings';
+import {settings} from './Icons';
 
 export default class Popup extends React.Component {
   state = {
@@ -19,7 +20,7 @@ export default class Popup extends React.Component {
         <button className={css.minimize} onClick={this.handleMinimize} title="Свернуть">-</button>
         <button className={css.close} onClick={onClose} title="Закрыть">✕</button>
         <button className={css.settings} onClick={onChangeLanguage} title="Настройка">
-          <img className={css.settingsIcon} src="/images/settings.svg" alt='Настройка'/>
+          {settings()}
         </button>
 
         {!(isMinimize || isShowSettings) && <Content {...this.props}/>}
