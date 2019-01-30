@@ -11,6 +11,7 @@ export default {
     presets: 'Пресеты',
     verticalRhythm: 'Верт. ритм',
     changeLanguage: 'Выберите язык',
+    githubLink: "Приложение делается на гитхабе",
   },
   'en': {
     columnNumber: 'Columns',
@@ -24,6 +25,7 @@ export default {
     presets: 'Presets',
     verticalRhythm: 'Vert. rhythm',
     changeLanguage: 'Choose language',
+    githubLink: "The application is made on github",
   },
   'it': {
     columnNumber: 'Colonne',
@@ -37,5 +39,6 @@ export default {
     presets: 'Preset',
     verticalRhythm: 'Ritmo verticale',
     changeLanguage: 'Scegli Lingua',
+    githubLink: "L'applicazione è fatta su github",
   }
 }

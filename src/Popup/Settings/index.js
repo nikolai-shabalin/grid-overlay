@@ -12,6 +12,8 @@ export default class Settings extends React.Component {
       <div className={css.Settings}>
         <label htmlFor="language" className={contentCSS.label}>{dictionary[language].changeLanguage}</label>
         <Select id={"language"} onChange={onChangeLanguage} options={dictionary}/>
+
+        <p><a href="https://github.com/nikolai-shabalin/grid-overlay/" target="_blank">{dictionary[language].githubLink}</a></p>
       </div>
     )
   }

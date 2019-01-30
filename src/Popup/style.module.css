@@ -31,7 +31,7 @@
 
 .settings {
   right: 37px;
-  top: 8px;
+  top: 8px !important;
 }
 
 .settingsIcon {
