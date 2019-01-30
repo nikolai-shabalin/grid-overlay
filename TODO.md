@@ -1,2 +1,2 @@
 * застилизовать инпуты и кнопки для разных сайтов
-  * на https://stackoverflow.com/ мои контролы теряют стилязацию
+  * https://developers.google.com/web/updates/2018/03/smooshgate
